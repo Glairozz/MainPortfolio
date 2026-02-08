@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glairozz Blair Punay - Software Engineer Portfolio</title>
+    <meta name="description" content="Aspiring Software Engineer and Fullstack Developer showcasing projects, skills, and experience in web development and programming">
+    <meta name="keywords" content="portfolio, software engineer, web developer, python, javascript, frontend, backend, projects, skills">
+    <meta name="author" content="Glairozz Blair Punay">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="My Portfolio - Professional Developer">
+    <meta property="og:description" content="Professional portfolio showcasing web development projects, skills, and experience">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="./assets/images/profile/me photo.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Portfolio - Professional Developer">
+    <meta name="twitter:description" content="Professional portfolio showcasing web development projects, skills, and experience">
+    <meta name="twitter:image" content="./assets/images/profile/me photo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <h1 class="loading-text">My Portfolio</h1>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-percentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>Glairozz Portfolio</h2>
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#education" class="nav-link">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#skills" class="nav-link">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#projects" class="nav-link">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#certificates" class="nav-link">Certificates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <canvas id="particle-canvas"></canvas>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Hi, I'm</span>
+                        <span class="title-line highlight">Glairozz Blair Punay</span>
+                    </h1>
+                    <div class="hero-subtitle">
+                        <span class="typewriter" data-text="Aspiring Software Engineer | Fullstack Developer | Creative Problem Solver | Lifelong Learner"></span>
+                    </div>
+                    <p class="hero-description">
+                        1st-year aspiring software engineer who loves diving into new ideas, building things from scratch, and figuring out how technology actually works behind the scenes.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <img src="./assets/images/profile/me photo.png" alt="Glairozz Blair Punay" class="profile-image">
+                        <div class="profile-border"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Aspiring Software Engineer & Creative Problem Solver</h3>
+                        <p>
+                            My name is Glairozz Blair Punay, I'm a 1st-year aspiring software engineer who loves diving into new ideas, building things from scratch, and figuring out how technology actually works behind the scenes.
+                        </p>
+                        <p>
+                            I'm the type of person who can hype up a room and spark conversations—but also the one who quietly zones in when it's time to code, learn, or create something meaningful. Software engineering isn't just a career path— it's a space where I get to solve
+                            problems, express creativity, and keep leveling up one project at a time.
+                        </p>
+
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Clean Code</h4>
+                                    <p>Writing maintainable and scalable solutions</p>
+                                </div>
+                            </div>
+
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Design Focus</h4>
+                                    <p>Creating beautiful and intuitive user interfaces</p>
+                                </div>
+                            </div>
+
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Performance</h4>
+                                    <p>Optimizing for speed and user experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="15">0</div>
+                            <div class="stat-label">Technologies Mastered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="100">0</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Education</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="education-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Bachelor of Science in Computer Science</h3>
+                                <span class="timeline-date">2025 - Present</span>
+                            </div>
+                            <div class="timeline-school">
+                                <img src="./assets/images/seal/mseufseal.png" alt="Manuel S. Enverga University Foundation" class="school-logo">
+                                <div class="school-info">
+                                    <h4>Manuel S. Enverga University Foundation</h4>
+                                    <p>Current 1st Year Student</p>
+                                </div>
+                            </div>
+                            <div class="timeline-description">
+                                <p>Pursuing Computer Science degree with focus on software engineering and web development. Actively learning programming fundamentals, data structures, and algorithms.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Science, Technology, Engineering, and Mathematics (STEM)</h3>
+                                <span class="timeline-date">2023 - 2025</span>
+                            </div>
+                            <div class="timeline-school">
+                                <img src="./assets/images/seal/easnhslogo.jpg" alt="Elias A. Salvador National High School" class="school-logo">
+                                <div class="school-info">
+                                    <h4>Elias A. Salvador National High School</h4>
+                                    <p>STEM Track Graduate</p>
+                                </div>
+                            </div>
+                            <div class="timeline-description">
+                                <p>Completed senior high school with STEM track, focusing on mathematics, sciences, and technology foundations that prepared me for computer science studies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Technologies</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="skills-categories">
+                    <div class="skill-category">
+                        <h3 class="category-title">Programming Languages</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/software/python.png" alt="Python" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Python</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/software/js.png" alt="JavaScript" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>JavaScript</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="80"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/software/html.png" alt="HTML" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>HTML</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/software/css.png" alt="CSS" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>CSS</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Frameworks & Libraries</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/software/react.png" alt="React" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>React</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="75"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/software/nodejs.png" alt="Node.js" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Node.js</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="70"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/software/bootstrap.png" alt="Bootstrap" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Bootstrap</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="82"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Pygame</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="80"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Development Tools</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/software/git.png" alt="Git" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Git</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/tools/github.webp" alt="GitHub" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>GitHub</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="88"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/tools/vscode.png" alt="VS Code" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>VS Code</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <img src="./assets/images/tools/pycharm.png" alt="PyCharm" class="skill-icon-img">
+                                </div>
+                                <div class="skill-info">
+                                    <h4>PyCharm</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="82"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Projects</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web-development">Web Development</button>
+                    <button class="filter-btn" data-filter="game-development">Game Development</button>
+                    <button class="filter-btn" data-filter="ui-design">UI Design</button>
+                </div>
+
+                <div class="projects-container">
+                    <!-- Web Development Projects -->
+                    <div class="project-item" data-category="web-development">
+                        <img src="./assets/images/projects/y-safe.png" alt="Y-SAFE">
+                        <a href="https://y-safe-v668.onrender.com/dashboard.html"><strong>Y-SAFE</strong></a>
+                        <p>
+                            A comprehensive safety management system with dashboard functionality. Built to provide users with safety monitoring and management tools through an intuitive web interface.
+                        </p>
+                    </div>
+
+                    <div class="project-item" data-category="web-development">
+                        <img src="./assets/images/projects/lotr.png" alt="Lord of the Rings Library">
+                        <a href="https://glairozz.github.io/lord-of-the-rings/"><strong>Lord of the Rings Library</strong></a>
+                        <p>
+                            A comprehensive website showcasing information about the Lord of the Rings series using HTML, CSS, and JavaScript. Features character profiles, timeline, and interactive elements.
+                        </p>
+                    </div>
+
+                    <div class="project-item" data-category="web-development">
+                        <img src="./assets/images/projects/got&hotd.png" alt="A Song of Ice and Fire & The Dance of the Dragons Library">
+                        <a href="https://glairozz.github.io/A-Song-of-Ice-and-Fire---The-Dance-of-The-Dragons/"><strong>A Song of Ice and Fire & The Dance of the Dragons Library</strong></a>
+                        <p>
+                            A detailed website showcasing information about the A Song of Ice and Fire & The Dance of the Dragons series, built with HTML, CSS, and JavaScript.
+                        </p>
+                    </div>
+
+                    <div class="project-item" data-category="web-development">
+                        <img src="./assets/images/projects/algo visualizer.png" alt="Python Algorithm Visualizer">
+                        <a href="https://glairozz.github.io/python-algorithm-visualizer/"><strong>Python Algorithm Visualizer</strong></a>
+                        <p>
+                            An interactive visual tool for understanding how various algorithms work step-by-step. Built with Python, it provides visual representations of sorting algorithms, pathfinding, and data structures to help users learn computer science concepts.
+                        </p>
+                    </div>
+
+                    <!-- Game Development Projects -->
+                    <div class="project-item" data-category="game-development">
+                        <img src="./assets/images/projects/egd.png" alt="Ethan's Great Dungeon">
+                        <a href="https://github.com/glairozzblair-gif/Pygame-Ethans-Great-Dungeon.git"><strong>Ethan's Great Dungeon</strong></a>
+                        <p>
+                            A simple 2D dungeon crawler game made using Pygame library in Python. Features multiple levels, enemies, and collectible items.
+                        </p>
+                    </div>
+
+                    <div class="project-item" data-category="game-development">
+                        <img src="./assets/images/projects/spygame.jpg" alt="Spy Adventure Game">
+                        <a href="https://glairozz.github.io/Spy-game/"><strong>Spy Adventure Game</strong></a>
+                        <p>
+                            An interactive spy-themed adventure game developed with Python and Pygame. Features stealth mechanics, mission-based gameplay, and engaging storyline.
+                        </p>
+                    </div>
+
+                    <div class="project-item" data-category="game-development">
+                        <img src="./assets/images/projects/drunkcards.png" alt="Drunk Cards Game">
+                        <a href="https://glairozz.github.io/drunk-cards/"><strong>Drunk Cards Game</strong></a>
+                        <p>
+                            A fun and interactive card game with unique drinking game mechanics. Built with Python featuring animated card movements and game logic.
+                        </p>
+                    </div>
+
+                    <div class="project-item" data-category="game-development">
+                        <img src="./assets/images/projects/rubics cube.jpg" alt="Rubics Cube">
+                        <a href="https://glairozz.github.io/Rubic-Cube/"><strong>Rubics Cube</strong></a>
+                        <p>
+                            A virtual Rubik's Cube simulator developed using Python and Pygame. Allows users to manipulate and solve the cube with intuitive controls.
+                        </p>
+                    </div>
+
+                    <!-- UI Design Projects -->
+                    <div class="project-item" data-category="ui-design">
+                        <img src="./assets/images/projects/firstportfolio.png" alt="First Portfolio Website">
+                        <a href="https://glairozz.github.io/Glairozz-Portfolio/"><strong>First Portfolio Website</strong></a>
+                        <p>
+                            My first personal portfolio website showcasing web development skills. Built with HTML, CSS, and JavaScript with responsive design and smooth animations.
+                        </p>
+                    </div>
+
+                    <div class="project-item" data-category="ui-design">
+                        <img src="./assets/images/projects/meet me.png" alt="Graphic Design Portfolio">
+                        <a href="https://glairozz.github.io/graphic-design-portfolio-practice/"><strong>Graphic Design Portfolio</strong></a>
+                        <p>
+                            A collection of my graphic design works including posters, logos, and social media graphics. Created using Canva and Adobe Photoshop.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="certificates">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Certifications & Achievements</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="certificates-container">
+                    <div class="certificates-grid">
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./assets/images/certificates/python for everybody.png" alt="Programming for Everybody certificate">
+                            </div>
+                            <div class="certificate-content">
+                                <h4 class="certificate-title">Programming for Everybody (Python)</h4>
+                                <p class="certificate-issuer">University of Michigan</p>
+                                <p class="certificate-date">Issued: 2024</p>
+                                <a href="https://www.coursera.org/learn/python/home/module/1" class="certificate-link" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./assets/images/certificates/intro to computers.png" alt="Introduction to Computers certificate">
+                            </div>
+                            <div class="certificate-content">
+                                <h4 class="certificate-title">Introduction to Computers</h4>
+                                <p class="certificate-issuer">Coursera</p>
+                                <p class="certificate-date">Issued: 2024</p>
+                                <a href="https://www.coursera.org/learn/introduction-to-computers/home/welcome" class="certificate-link" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./assets/images/certificates/hello python.png" alt="Hello Python certificate">
+                            </div>
+                            <div class="certificate-content">
+                                <h4 class="certificate-title">Hello Python: Introduction to Programming</h4>
+                                <p class="certificate-issuer">Coursera</p>
+                                <p class="certificate-date">Issued: 2024</p>
+                                <a href="#" class="certificate-link" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./assets/images/certificates/functions and conditional statements.png" alt="Functions and Conditional Statements certificate">
+                            </div>
+                            <div class="certificate-content">
+                                <h4 class="certificate-title">Functions and Conditional Statements</h4>
+                                <p class="certificate-issuer">Coursera</p>
+                                <p class="certificate-date">Issued: 2024</p>
+                                <a href="#" class="certificate-link" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./assets/images/certificates/loops and strings.png" alt="Loops and Strings certificate">
+                            </div>
+                            <div class="certificate-content">
+                                <h4 class="certificate-title">Loops and Strings in Python</h4>
+                                <p class="certificate-issuer">Coursera</p>
+                                <p class="certificate-date">Issued: 2024</p>
+                                <a href="#" class="certificate-link" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./assets/images/certificates/python selection.png" alt="Python selection certificate">
+                            </div>
+                            <div class="certificate-content">
+                                <h4 class="certificate-title">Python Basics: Selection and Iteration</h4>
+                                <p class="certificate-issuer">Coursera</p>
+                                <p class="certificate-date">Issued: 2024</p>
+                                <a href="https://www.coursera.org/learn/codio-python-basics/home/module/1" class="certificate-link" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./assets/images/certificates/python structure.png" alt="Python structures certificate">
+                            </div>
+                            <div class="certificate-content">
+                                <h4 class="certificate-title">Python Basic Structures: Lists, Strings, and Files</h4>
+                                <p class="certificate-issuer">Coursera</p>
+                                <p class="certificate-date">Issued: 2024</p>
+                                <a href="https://www.coursera.org/learn/python-basic-structures-lists-strings-and-files/home/module/1" class="certificate-link" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./assets/images/certificates/pygame.png" alt="Pygame certificate">
+                            </div>
+                            <div class="certificate-content">
+                                <h4 class="certificate-title">Python Game Development with Pygame</h4>
+                                <p class="certificate-issuer">Coursera</p>
+                                <p class="certificate-date">Issued: 2024</p>
+                                <a href="https://www.coursera.org/learn/python-game-development-with-pygame/home/module/1" class="certificate-link" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./assets/images/certificates/frontend dev.png" alt="Frontend Development">
+                            </div>
+                            <div class="certificate-content">
+                                <h4 class="certificate-title">Introduction to Frontend Development</h4>
+                                <p class="certificate-issuer">Meta</p>
+                                <p class="certificate-date">Issued: 2024</p>
+                                <a href="https://www.coursera.org/learn/introduction-to-front-end-development/home/week/1" class="certificate-link" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./assets/images/certificates/data structures.png" alt="Data Structures">
+                            </div>
+                            <div class="certificate-content">
+                                <h4 class="certificate-title">Data Structures</h4>
+                                <p class="certificate-issuer">Coursera</p>
+                                <p class="certificate-date">Issued: 2024</p>
+                                <a href="#" class="certificate-link" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>
+                            I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!
+                        </p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <a href="mailto:ibotpunay@gmail.com">ibotpunay@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Viber</h4>
+                                    <a href="tel:+639950960349">+639950960349</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Location</h4>
+                                    <span>Your City, Country</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://github.com/Glairozz" class="social-link" aria-label="GitHub" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/glairozz-blair-punay-11259a380/" class="social-link" aria-label="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="viber://contact?number=%2B639950960349" class="social-link" aria-label="Viber">
+                                <i class="fab fa-viber"></i>
+                            </a>
+                            <a href="mailto:ibotpunay@gmail.com" class="social-link" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form id="contact-form" class="form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Your Email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject" required>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea id="message" name="message" class="form-input" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full">
+                                Send Message <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Glairozz Blair Punay. All rights reserved.</p>
+                    <p>Made with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i></p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
