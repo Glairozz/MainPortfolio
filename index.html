@@ -39,14 +39,51 @@
 <body>
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
+        <div class="loading-particles" id="loading-particles"></div>
         <div class="loading-content">
             <div class="loading-logo">
-                <h1 class="loading-text">My Portfolio</h1>
+                <h1 class="loading-text">
+                    <span class="letter" style="animation-delay: 0.0s"><</span>
+                    <span class="letter" style="animation-delay: 0.1s">/</span>
+                    <span class="letter" style="animation-delay: 0.2s">></span>
+                    <span class="letter" style="animation-delay: 0.3s">g</span>
+                    <span class="letter" style="animation-delay: 0.4s">l</span>
+                    <span class="letter" style="animation-delay: 0.5s">a</span>
+                    <span class="letter" style="animation-delay: 0.6s">i</span>
+                    <span class="letter" style="animation-delay: 0.7s">r</span>
+                    <span class="letter" style="animation-delay: 0.8s">o</span>
+                    <span class="letter" style="animation-delay: 0.9s">z</span>
+                    <span class="letter" style="animation-delay: 1.0s">z</span>
+                </h1>
             </div>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
+            <div class="loading-bar-container">
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
             </div>
             <div class="loading-percentage">0%</div>
+            <div class="loading-subtitle">
+                <span class="subtitle-letter" style="animation-delay: 1.2s">g</span>
+                <span class="subtitle-letter" style="animation-delay: 1.3s">l</span>
+                <span class="subtitle-letter" style="animation-delay: 1.4s">a</span>
+                <span class="subtitle-letter" style="animation-delay: 1.5s">i</span>
+                <span class="subtitle-letter" style="animation-delay: 1.6s">r</span>
+                <span class="subtitle-letter" style="animation-delay: 1.7s">o</span>
+                <span class="subtitle-letter" style="animation-delay: 1.8s">z</span>
+                <span class="subtitle-letter" style="animation-delay: 1.9s">z</span>
+                <span class="subtitle-letter" style="animation-delay: 2.0s"> </span>
+                <span class="subtitle-letter" style="animation-delay: 2.1s">b</span>
+                <span class="subtitle-letter" style="animation-delay: 2.2s">l</span>
+                <span class="subtitle-letter" style="animation-delay: 2.3s">a</span>
+                <span class="subtitle-letter" style="animation-delay: 2.4s">i</span>
+                <span class="subtitle-letter" style="animation-delay: 2.5s">r</span>
+                <span class="subtitle-letter" style="animation-delay: 2.6s"> </span>
+                <span class="subtitle-letter" style="animation-delay: 2.7s">p</span>
+                <span class="subtitle-letter" style="animation-delay: 2.8s">u</span>
+                <span class="subtitle-letter" style="animation-delay: 2.9s">n</span>
+                <span class="subtitle-letter" style="animation-delay: 3.0s">a</span>
+                <span class="subtitle-letter" style="animation-delay: 3.1s">y</span>
+            </div>
         </div>
     </div>
 
@@ -55,7 +92,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <h2>Glairozz Portfolio</h2>
+                    <h2>Glairozz</>
                 </div>
 
                 <div class="nav-menu" id="nav-menu">
@@ -97,9 +134,6 @@
     <main class="main">
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="hero-background">
-                <canvas id="particle-canvas"></canvas>
-            </div>
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
