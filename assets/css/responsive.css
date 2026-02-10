@@ -4,6 +4,11 @@
 /* Enhanced Mobile Menu */
 
 @media (max-width: 768px) {
+    .header {
+        position: relative;
+        z-index: 1000;
+    }
+    
     .nav-menu {
         background: #2C3E50;
         /* Navy Blue */
@@ -28,6 +33,10 @@
 /* Tablet Optimizations */
 
 @media (min-width: 769px) and (max-width: 1024px) {
+    .hero {
+        padding: 5rem 0 3rem 0;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
@@ -72,7 +81,7 @@
 
 @media (max-width: 480px) {
     .hero {
-        padding: 3rem 0;
+        padding: 6rem 0 3rem 0;
         min-height: 90vh;
     }
     
