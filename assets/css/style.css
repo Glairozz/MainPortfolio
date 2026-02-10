@@ -544,26 +544,11 @@ body::before {
 }
 
 #name {
-    font-size: 2.5rem;
-    font-family: "Noto Sans", sans-serif;
-    font-weight: bold;
-    background-image: url("../icons/mechanicalkeyboard.jpg");
-    background-size: cover;
-    background-position: center;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: nameAnimation 20s linear infinite;
-}
-
-@keyframes nameAnimation {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: -500px;
-    }
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    letter-spacing: -0.01em;
 }
 
 .nav-menu {
