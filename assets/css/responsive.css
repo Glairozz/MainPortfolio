@@ -42,11 +42,11 @@
         gap: 3rem;
     }
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
     .profile-container {
-        width: 320px;
-        height: 320px;
+        width: 300px;
+        height: 300px;
     }
     .about-content {
         grid-template-columns: 1fr;
@@ -92,24 +92,24 @@
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 1.2;
         margin-bottom: 1.5rem;
     }
     
     .typewriter {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
     
     .hero-description {
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin-bottom: 2rem;
         text-align: center;
     }
     
     .profile-container {
-        width: 280px;
-        height: 280px;
+        width: 250px;
+        height: 250px;
         margin: 0 auto;
     }
     
