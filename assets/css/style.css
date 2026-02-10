@@ -82,20 +82,134 @@ body::before {
     padding: 0 20px;
 }
 
-/* Loading Screen */
-.loading-screen {
+/* New Loading Screen Styles */
+
+/* Particles Canvas (background effect) */
+#particles-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #2C3E50; /* Navy Blue */
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+/* Loading Screen Container */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #0d1b2a, #1b263b);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    font-family: "Arial", sans-serif;
     z-index: 9999;
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.6s ease;
+    color: #e5eaf1;
+}
+
+/* Name Animation */
+#user-name {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
     overflow: hidden;
+    white-space: nowrap;
+}
+
+#user-name span {
+    display: inline-block;
+    transform: translateX(100px);
+    opacity: 0;
+    animation: slideInMiddle 0.6s forwards;
+    transition: all 0.3s ease;
+}
+
+#user-name span:hover {
+    transform: scale(1.2) rotate(-5deg);
+    color: #60a5fa;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+#user-name span.space {
+    display: inline-block;
+    width: 12px;
+    margin-right: 0;
+}
+
+/* Individual letter animation delays */
+#user-name span:nth-child(1) { animation-delay: 0s; }
+#user-name span:nth-child(2) { animation-delay: 0.05s; }
+#user-name span:nth-child(3) { animation-delay: 0.1s; }
+#user-name span:nth-child(4) { animation-delay: 0.15s; }
+#user-name span:nth-child(5) { animation-delay: 0.2s; }
+#user-name span:nth-child(6) { animation-delay: 0.25s; }
+#user-name span:nth-child(7) { animation-delay: 0.3s; }
+#user-name span:nth-child(8) { animation-delay: 0.35s; }
+#user-name span:nth-child(9) { animation-delay: 0.4s; }
+#user-name span:nth-child(10) { animation-delay: 0.45s; }
+#user-name span:nth-child(11) { animation-delay: 0.5s; }
+#user-name span:nth-child(12) { animation-delay: 0.55s; }
+#user-name span:nth-child(13) { animation-delay: 0.6s; }
+#user-name span:nth-child(14) { animation-delay: 0.65s; }
+#user-name span:nth-child(15) { animation-delay: 0.7s; }
+#user-name span:nth-child(16) { animation-delay: 0.75s; }
+#user-name span:nth-child(17) { animation-delay: 0.8s; }
+#user-name span:nth-child(18) { animation-delay: 0.85s; }
+#user-name span:nth-child(19) { animation-delay: 0.9s; }
+#user-name span:nth-child(20) { animation-delay: 0.95s; }
+#user-name span:nth-child(21) { animation-delay: 1s; }
+#user-name span:nth-child(22) { animation-delay: 1.05s; }
+#user-name span:nth-child(23) { animation-delay: 1.1s; }
+
+/* Slide in animation */
+@keyframes slideInMiddle {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Status text */
+.status-text {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #c9d6e3;
+}
+
+/* Loading bar container */
+.loading-bar {
+    width: 260px;
+    height: 6px;
+    border-radius: 10px;
+    background: #25344d;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 1px solid #375d8c;
+}
+
+/* Loading bar fill */
+#bar-fill {
+    height: 100%;
+    width: 0%;
+    background: #4da3ff;
+    transition: width 0.05s linear;
 }
 
 .loading-screen.fade-out {

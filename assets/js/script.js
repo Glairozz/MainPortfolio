@@ -1,49 +1,177 @@
 // Portfolio JavaScript - Interactive Features and Animations
 
-// Loading Screen
-window.addEventListener('load', () => {
+// New Loading Screen Logic
+(function runLoading() {
     const loadingScreen = document.getElementById('loading-screen');
-    const loadingProgress = document.querySelector('.loading-progress');
-    const loadingPercentage = document.querySelector('.loading-percentage');
-    const loadingParticles = document.getElementById('loading-particles');
+    const content = document.querySelector('main');
+    const barFill = document.getElementById('bar-fill');
+    
+    const duration = 3000; // 3 seconds loading time
+    const interval = 50;   // Update every 50ms
+    const step = (interval / duration) * 100; // Calculate progress step
+    let progress = 0;
 
-    // Create floating particles
-    function createFloatingParticles() {
-        for (let i = 0; i < 20; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'floating-particle';
-            particle.style.width = Math.random() * 6 + 2 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 4 + 's';
-            particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
-            loadingParticles.appendChild(particle);
-        }
+    // Check if loading screen exists
+    if (!loadingScreen) {
+        if (content) content.style.display = 'block';
+        return;
     }
 
-    createFloatingParticles();
+    // Check if progress bar exists
+    if (!barFill) {
+        setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                if (content) content.style.display = 'block';
+            }, 600);
+        }, duration);
+        return;
+    }
 
-    let progress = 0;
-    const interval = setInterval(() => {
-        progress += Math.random() * 20;
+    // Animate progress bar
+    const iv = setInterval(() => {
+        progress += step;
+        if (progress > 100) progress = 100;
+        barFill.style.width = progress + '%';
 
         if (progress >= 100) {
-            progress = 100;
-            clearInterval(interval);
-
+            clearInterval(iv);
+            loadingScreen.style.opacity = '0';
             setTimeout(() => {
-                loadingScreen.classList.add('fade-out');
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                }, 800);
-            }, 1000);
+                loadingScreen.style.display = 'none';
+                if (content) content.style.display = 'block';
+            }, 600);
         }
+    }, interval);
+})();
 
-        loadingProgress.style.width = progress + '%';
-        loadingPercentage.textContent = Math.round(progress) + '%';
-    }, 150);
-});
+// Particle System (Background Effect)
+(function setupParticles() {
+    const canvas = document.getElementById('particles-canvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouseX = 0;
+    let mouseY = 0;
+    
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 2 - 1;
+            this.speedY = Math.random() * 2 - 1;
+            this.color = `hsl(${Math.random() * 60 + 200}, 70%, 60%)`;
+            this.alpha = Math.random() * 0.5 + 0.3;
+            this.pulseSpeed = Math.random() * 0.02 + 0.01;
+            this.pulsePhase = Math.random() * Math.PI * 2;
+        }
+        
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            
+            // Mouse interaction
+            const dx = mouseX - this.x;
+            const dy = mouseY - this.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < 100 && distance > 0) {
+                const force = (100 - distance) / 100;
+                this.x -= (dx / distance) * force * 2;
+                this.y -= (dy / distance) * force * 2;
+            }
+            
+            // Wrap around edges
+            if (this.x > canvas.width) this.x = 0;
+            if (this.x < 0) this.x = canvas.width;
+            if (this.y > canvas.height) this.y = 0;
+            if (this.y < 0) this.y = canvas.height;
+            
+            // Pulsing effect
+            this.pulsePhase += this.pulseSpeed;
+            this.currentSize = this.size + Math.sin(this.pulsePhase) * 0.5;
+        }
+        
+        draw() {
+            ctx.save();
+            ctx.globalAlpha = this.alpha;
+            ctx.fillStyle = this.color;
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.currentSize, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+    
+    // Create particles
+    for (let i = 0; i < 80; i++) {
+        particles.push(new Particle());
+    }
+    
+    // Mouse tracking
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+    
+    // Connect particles with lines
+    function connectParticles() {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 120) {
+                    ctx.save();
+                    ctx.globalAlpha = (120 - distance) / 120 * 0.3;
+                    ctx.strokeStyle = '#3b82f6';
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+        }
+    }
+    
+    function animate() {
+        if (!ctx || !canvas) return;
+        
+        try {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                if (particle && typeof particle.update === 'function' && typeof particle.draw === 'function') {
+                    particle.update();
+                    particle.draw();
+                }
+            });
+            
+            connectParticles();
+            requestAnimationFrame(animate);
+        } catch (error) {
+            console.error('Animation error:', error);
+        }
+    }
+    
+    animate();
+})();
 
 // Navigation
 const navToggle = document.getElementById('nav-toggle');
