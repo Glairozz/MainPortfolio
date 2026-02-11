@@ -676,6 +676,7 @@ body::before {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, #1e3a8a, #0f172a);
@@ -697,6 +698,9 @@ body::before {
     align-items: center;
     position: relative;
     z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero-text {
@@ -818,13 +822,15 @@ body::before {
 }
 
 .hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero-text {
