@@ -81,8 +81,8 @@
 
 @media (max-width: 480px) {
     .hero {
-        padding: 6rem 0 3rem 0;
-        min-height: 90vh;
+        padding: 3rem 0 2rem 0;
+        min-height: auto;
     }
     
     .hero-content {
@@ -92,9 +92,9 @@
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1.2;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
     
     .typewriter {
@@ -231,65 +231,6 @@
         height: 50px;
     }
 }
-    .typewriter {
-        font-size: 1rem;
-    }
-    .hero-description {
-        font-size: 0.95rem;
-    }
-    .profile-container {
-        width: 220px;
-        height: 220px;
-    }
-    .section-title {
-        font-size: 1.6rem;
-    }
-    .btn {
-        padding: 0.8rem 1.2rem;
-        font-size: 0.9rem;
-        min-height: 44px;
-    }
-    .hero-cta {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
-    }
-    .btn {
-        width: 100%;
-        max-width: 280px;
-    }
-    .about-highlights {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .timeline-content {
-        padding: 1.2rem;
-    }
-    .skill-category {
-        padding: 1.2rem;
-    }
-    .project-card {
-        margin-bottom: 1.5rem;
-    }
-    .certificate-card {
-        margin-bottom: 1.5rem;
-    }
-    .contact-form {
-        padding: 1.2rem;
-    }
-    .highlight-item {
-        padding: 1rem;
-    }
-    .skill-icon {
-        width: 45px;
-        height: 45px;
-    }
-    .contact-icon {
-        width: 45px;
-        height: 45px;
-    }
-}
 
 
 /* Large Desktop Optimizations */
@@ -374,8 +315,11 @@
 
 @media (max-width: 768px) {
     .profile-container {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
+    }
+    .hero {
+        padding: 4rem 0 2rem 0;
     }
     .skill-icon {
         width: 50px;
@@ -402,8 +346,9 @@
 
 @media (max-width: 480px) {
     .profile-container {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
     }
     .skill-icon {
         width: 45px;
@@ -537,7 +482,7 @@
 @media (max-width: 768px) and (orientation: landscape) {
     .hero {
         min-height: 100vh;
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
     .hero-content {
         grid-template-columns: 1fr 1fr;
