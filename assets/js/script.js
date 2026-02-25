@@ -440,18 +440,19 @@ if (typewriterElement) {
 
 // Enhanced Scroll Animations
 const initScrollAnimations = () => {
-    const animatedElements = document.querySelectorAll('.animate-on-scroll, .slide-left, .slide-right, .scale-in, .rotate-in, .bounce-in');
+    const animatedElements = document.querySelectorAll('.animate-on-scroll, .slide-left, .slide-right, .scale-in, .rotate-in, .bounce-in, .project-item, .certificate-card, .highlight-item, .timeline-content, .stat-item, .skill-category');
 
     const checkVisibility = () => {
-        animatedElements.forEach(element => {
+        animatedElements.forEach((element, index) => {
             const rect = element.getBoundingClientRect();
             const isVisible = (
-                rect.top <= window.innerHeight * 0.8 &&
+                rect.top <= window.innerHeight * 0.85 &&
                 rect.bottom >= 0
             );
 
             if (isVisible && !element.classList.contains('visible')) {
                 element.classList.add('visible');
+                element.style.setProperty('--item-index', index);
             }
         });
     };
@@ -459,19 +460,35 @@ const initScrollAnimations = () => {
     // Initial check
     checkVisibility();
 
-    // Throttled scroll handler
+    // Throttled scroll handler with smoother animation
     let ticking = false;
     const requestTick = () => {
         if (!ticking) {
             requestAnimationFrame(checkVisibility);
             ticking = true;
-            setTimeout(() => { ticking = false; }, 100);
+            setTimeout(() => { ticking = false; }, 16); // ~60fps
         }
     };
 
-    window.addEventListener('scroll', requestTick);
-    window.addEventListener('resize', requestTick);
+    window.addEventListener('scroll', requestTick, { passive: true });
+    window.addEventListener('resize', requestTick, { passive: true });
 };
+
+// Add scroll-based transform for enhanced motion effect
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * 0.05;
+    
+    // Apply subtle parallax to sections
+    document.querySelectorAll('section').forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const offset = (window.innerHeight - rect.top) * 0.02;
+            section.style.transform = `translateY(${offset}px)`;
+            section.style.opacity = Math.min(1, (window.innerHeight - rect.top) / 300 + 0.5);
+        }
+    });
+}, { passive: true });
 
 // Skill Bars Animation
 const skillBars = document.querySelectorAll('.skill-progress');
@@ -602,21 +619,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Parallax effect for hero section
+// Parallax effect for hero section with enhanced motion
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const heroContent = document.querySelector('.hero-content');
     const heroImage = document.querySelector('.hero-image');
 
     if (heroContent) {
-        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-        heroContent.style.opacity = 1 - scrolled / 600;
+        heroContent.style.transform = `translateY(${scrolled * 0.4}px)`;
+        heroContent.style.opacity = 1 - scrolled / 500;
     }
 
     if (heroImage) {
-        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+        heroImage.style.transform = `translateY(${scrolled * 0.25}px) rotate(${scrolled * 0.01}deg)`;
     }
-});
+}, { passive: true });
 
 // Magnetic cursor effect for buttons
 document.querySelectorAll('.btn, .project-link, .social-link').forEach(element => {
