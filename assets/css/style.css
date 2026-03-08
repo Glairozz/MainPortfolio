@@ -277,31 +277,7 @@ body::before {
     }
 }
 
-/* Enhanced floating animation for cells */
-@keyframes floatCell {
-    0%, 100% {
-        transform: translateY(0px) rotateX(0deg);
-    }
-    25% {
-        transform: translateY(-8px) rotateX(2deg);
-    }
-    50% {
-        transform: translateY(-15px) rotateX(0deg);
-    }
-    75% {
-        transform: translateY(-8px) rotateX(-2deg);
-    }
-}
-
-/* Subtle floating for cells */
-@keyframes floatSubtle {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-}
+/* Enhanced floating animation for cells - REMOVED */
 
 /* Letter sliding animation */
 @keyframes slideInFromRight {
@@ -589,8 +565,38 @@ body::before {
 section {
     padding: 5rem 0;
     position: relative;
-    transition: transform 0.1s ease-out, opacity 0.3s ease-out;
+    transition: transform 0.15s ease-out, opacity 0.4s ease-out;
 }
+
+/* Smooth scroll reveal animations with staggered delays */
+.project-item,
+.certificate-card,
+.highlight-item,
+.timeline-content,
+.stat-item,
+.skill-category {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-item.visible,
+.certificate-card.visible,
+.highlight-item.visible,
+.timeline-content.visible,
+.stat-item.visible,
+.skill-category.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays for each element type */
+.project-item.visible { transition-delay: 0s; }
+.certificate-card.visible { transition-delay: 0.1s; }
+.highlight-item.visible { transition-delay: 0s; }
+.timeline-content.visible { transition-delay: 0s; }
+.stat-item.visible { transition-delay: 0s; }
+.skill-category.visible { transition-delay: 0s; }
 
 /* Header Navigation */
 .header {
@@ -1178,12 +1184,9 @@ section {
     backface-visibility: hidden;
     position: relative;
     overflow: hidden;
-    animation: floatSubtle 5s ease-in-out infinite;
-    animation-delay: calc(var(--item-index, 0) * 0.3s);
 }
 
 .highlight-item:hover {
-    animation: none;
     transform: translateY(-8px) scale(1.02) rotateX(3deg);
     box-shadow: 
         0 20px 40px rgba(59, 130, 246, 0.3),
@@ -1261,13 +1264,10 @@ section {
     background: #111827;
     border-radius: 15px;
     border: 2px solid #3b82f6;
-    animation: floatSubtle 5s ease-in-out infinite;
-    animation-delay: calc(var(--item-index, 0) * 0.3s);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .stat-item:hover {
-    animation: none;
     transform: translateY(-8px) scale(1.05);
     box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
     border-color: #60a5fa;
@@ -1343,13 +1343,10 @@ section {
     border-radius: 20px;
     border: 2px solid #0B5345; /* Spruce Blue */
     box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-    animation: floatSubtle 6s ease-in-out infinite;
-    animation-delay: calc(var(--item-index, 0) * 0.4s);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timeline-content:hover {
-    animation: none;
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
     border-color: #3b82f6;
@@ -1419,13 +1416,10 @@ section {
     padding: 2rem;
     border-radius: 20px;
     border: 2px solid #0B5345; /* Spruce Blue */
-    animation: floatSubtle 6s ease-in-out infinite;
-    animation-delay: calc(var(--item-index, 0) * 0.5s);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill-category:hover {
-    animation: none;
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
     border-color: #3b82f6;
@@ -1593,8 +1587,6 @@ img[src$=".jpg"] {
     backface-visibility: hidden;
     perspective: 1000px;
     transform-style: preserve-3d;
-    animation: floatSubtle 6s ease-in-out infinite;
-    animation-delay: calc(var(--item-index, 0) * 0.5s);
 }
 
 .project-item::before {
@@ -1613,7 +1605,6 @@ img[src$=".jpg"] {
 }
 
 .project-item:hover {
-    animation: none;
     transform: translateY(-15px) scale(1.05) rotateX(5deg) rotateY(-3deg);
     box-shadow: 
         0 30px 60px rgba(59, 130, 246, 0.4),
@@ -1738,8 +1729,6 @@ img[src$=".jpg"] {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     transform: translateZ(0);
-    animation: floatSubtle 7s ease-in-out infinite;
-    animation-delay: calc(var(--item-index, 0) * 0.4s);
 }
 
 .certificate-card::after {
@@ -1759,7 +1748,6 @@ img[src$=".jpg"] {
 }
 
 .certificate-card:hover {
-    animation: none;
     transform: translateY(-10px) rotateX(5deg);
     box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
     border-color: #0B5345; /* Spruce Blue */

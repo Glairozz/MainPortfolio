@@ -443,30 +443,27 @@ const initScrollAnimations = () => {
     const animatedElements = document.querySelectorAll('.animate-on-scroll, .slide-left, .slide-right, .scale-in, .rotate-in, .bounce-in, .project-item, .certificate-card, .highlight-item, .timeline-content, .stat-item, .skill-category');
 
     const checkVisibility = () => {
-        animatedElements.forEach((element, index) => {
+        animatedElements.forEach((element) => {
             const rect = element.getBoundingClientRect();
             const isVisible = (
-                rect.top <= window.innerHeight * 0.85 &&
+                rect.top <= window.innerHeight * 0.9 &&
                 rect.bottom >= 0
             );
 
             if (isVisible && !element.classList.contains('visible')) {
                 element.classList.add('visible');
-                element.style.setProperty('--item-index', index);
             }
         });
     };
 
-    // Initial check
     checkVisibility();
 
-    // Throttled scroll handler with smoother animation
     let ticking = false;
     const requestTick = () => {
         if (!ticking) {
             requestAnimationFrame(checkVisibility);
             ticking = true;
-            setTimeout(() => { ticking = false; }, 16); // ~60fps
+            setTimeout(() => { ticking = false; }, 16);
         }
     };
 
@@ -477,15 +474,16 @@ const initScrollAnimations = () => {
 // Add scroll-based transform for enhanced motion effect
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const rate = scrolled * 0.05;
     
-    // Apply subtle parallax to sections
+    // Apply parallax to sections with enhanced motion
     document.querySelectorAll('section').forEach((section, index) => {
         const rect = section.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
-            const offset = (window.innerHeight - rect.top) * 0.02;
+            const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+            const offset = Math.sin(scrollProgress * Math.PI) * 30;
+            const opacity = Math.min(1, Math.max(0.3, scrollProgress + 0.3));
             section.style.transform = `translateY(${offset}px)`;
-            section.style.opacity = Math.min(1, (window.innerHeight - rect.top) / 300 + 0.5);
+            section.style.opacity = opacity;
         }
     });
 }, { passive: true });
