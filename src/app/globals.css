@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
+  --color-background: #020617;
+  --color-foreground: #cbd5e1;
+  --color-accent: #22d3ee;
+  --color-accent-dark: #0891b2;
+  --color-card: #0f172a;
+  --color-card-hover: #1e293b;
+  --color-card-border: #1e293b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #020617;
+  color: #cbd5e1;
+  font-family: var(--font-body);
+}
