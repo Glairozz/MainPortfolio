@@ -17,8 +17,8 @@ const projects = [
 
   // --- Game Development ---
   { title: "Ethan's Great Dungeon", category: "Game Development", image: "/assets/images/projects/egd.png", url: "https://github.com/glairozzblair-gif/Pygame-Ethans-Great-Dungeon.git", description: "A 2D dungeon crawler game made using Pygame with multiple levels and enemies." },
-  { title: "Who's the Spy?", category: "Game Development", image: "/assets/images/projects/spygame.jpg", url: "https://spy-game-amber.vercel.app/", description: "An interactive spy-themed adventure game with stealth mechanics." },
-  { title: "Drunk Cards", category: "Game Development", image: "/assets/images/projects/drunkcards.png", url: "https://drunk-cards.vercel.app/", description: "A fun card game with unique mechanics and animated movements." },
+  { title: "Who's the Spy?", category: "Game Development", image: "/assets/images/projects/who's the spy.jpg", url: "https://spy-game-amber.vercel.app/", description: "An interactive spy-themed adventure game with stealth mechanics." },
+  { title: "Drunk Cards", category: "Game Development", image: "/assets/images/projects/drunk cards.jpg", url: "https://drunk-cards.vercel.app/", description: "A fun card game with unique mechanics and animated movements." },
   { title: "Kings Cup", category: "Game Development", image: "/assets/images/projects/king's cup.jpg", url: "https://kings-cup-nine.vercel.app/", description: "A digital version of the classic Kings Cup card game with interactive gameplay and party mechanics." },
   { title: "Rubik's Cube", category: "Game Development", image: "/assets/images/projects/rubics cube.jpg", url: "https://glairozz.github.io/Rubic-Cube/", description: "A virtual Rubik's Cube simulator with intuitive controls." },
   { title: "Space Shooter", category: "Game Development", image: "/assets/images/projects/pyshooter.png", url: "https://github.com/Glairozz/PygameSpaceShooter", description: "An arcade space shooter with multiple enemy types and power-ups." },
