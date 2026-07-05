@@ -19,11 +19,11 @@ const projects = [
   { title: "Ethan's Great Dungeon", category: "Game Development", image: "/assets/images/projects/egd.png", url: "https://github.com/glairozzblair-gif/Pygame-Ethans-Great-Dungeon.git", description: "A 2D dungeon crawler game made using Pygame with multiple levels and enemies." },
   { title: "Who's the Spy?", category: "Game Development", image: "/assets/images/projects/spygame.jpg", url: "https://spy-game-amber.vercel.app/", description: "An interactive spy-themed adventure game with stealth mechanics." },
   { title: "Drunk Cards", category: "Game Development", image: "/assets/images/projects/drunkcards.png", url: "https://drunk-cards.vercel.app/", description: "A fun card game with unique mechanics and animated movements." },
-  { title: "Kings Cup", category: "Game Development", image: "", url: "https://kings-cup-nine.vercel.app/", description: "A digital version of the classic Kings Cup card game with interactive gameplay and party mechanics." },
+  { title: "Kings Cup", category: "Game Development", image: "/assets/images/projects/king's cup.jpg", url: "https://kings-cup-nine.vercel.app/", description: "A digital version of the classic Kings Cup card game with interactive gameplay and party mechanics." },
   { title: "Rubik's Cube", category: "Game Development", image: "/assets/images/projects/rubics cube.jpg", url: "https://glairozz.github.io/Rubic-Cube/", description: "A virtual Rubik's Cube simulator with intuitive controls." },
   { title: "Space Shooter", category: "Game Development", image: "/assets/images/projects/pyshooter.png", url: "https://github.com/Glairozz/PygameSpaceShooter", description: "An arcade space shooter with multiple enemy types and power-ups." },
   { title: "PyChess", category: "Game Development", image: "/assets/images/projects/pychess.png", url: "https://github.com/Glairozz/python-chess", description: "A fully functional chess game with AI opponent and graphical interface." },
-  { title: "Zzoryx Game Hub", category: "Game Development", image: "", url: "https://game-hub-portal-alpha.vercel.app/", description: "A game hub portal featuring a collection of interactive web-based games and experiences." },
+  { title: "Zzoryx Game Hub", category: "Game Development", image: "/assets/images/projects/game hub.jpg", url: "https://game-hub-portal-alpha.vercel.app/", description: "A game hub portal featuring a collection of interactive web-based games and experiences." },
 
   // --- UI Design ---
   { title: "Web Portfolio", category: "UI Design", image: "/assets/images/projects/firstportfolio.png", url: "https://glairozz-formal-portfolio.vercel.app/", description: "My first personal portfolio website showcasing web development skills." },
