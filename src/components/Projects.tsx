@@ -27,7 +27,7 @@ const projects = [
 
   // --- UI Design ---
   { title: "Web Portfolio", category: "UI Design", image: "/assets/images/projects/firstportfolio.png", url: "https://glairozz-formal-portfolio.vercel.app/", description: "My first personal portfolio website showcasing web development skills." },
-  { title: "Graphic Design Portfolio", category: "UI Design", image: "/assets/images/projects/meet me.png", url: "https://glairozz-portfolio.vercel.app/", description: "A collection of graphic design works including posters and logos." },
+
 ];
 
 const categories = ["All", "Web Development", "Game Development", "UI Design"];
