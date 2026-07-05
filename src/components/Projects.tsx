@@ -13,7 +13,7 @@ const projects = [
   { title: "ASCII Portrait Generator", category: "Web Development", image: "/assets/images/projects/portrait generator.png", url: "https://glairozz.github.io/ASCII_PortraitGenerator/", description: "Convert images into ASCII art portraits with customizable settings." },
   { title: "Valentines Invitation Letter", category: "Web Development", image: "/assets/images/projects/valentines inv letter.png", url: "https://glairozz.github.io/ValentinesInvitationLetter/", description: "An interactive Valentine's Day invitation letter website." },
   { title: "Online Bank Teller", category: "Web Development", image: "/assets/images/projects/bank teller.png", url: "https://glairozz.github.io/BankTellerWebPractice/", description: "A comprehensive online banking interface for teller operations." },
-  { title: "3D Visual Recognition", category: "Web Development", image: "/assets/images/projects/3dRecognition.png", url: "https://github.com/Glairozz/3d-Hand-Recognition", description: "A 3D visual recognition project leveraging computer vision and deep learning for hand gesture tracking." },
+  { title: "3D Visual Recognition", category: "Web Development", image: "/assets/images/projects/3dRecognition.jpg", url: "https://github.com/Glairozz/3d-Hand-Recognition", description: "A 3D visual recognition project leveraging computer vision and deep learning for hand gesture tracking." },
 
   // --- Game Development ---
   { title: "Ethan's Great Dungeon", category: "Game Development", image: "/assets/images/projects/egd.png", url: "https://github.com/glairozzblair-gif/Pygame-Ethans-Great-Dungeon.git", description: "A 2D dungeon crawler game made using Pygame with multiple levels and enemies." },
