@@ -23,14 +23,14 @@ const education = [
 
 export default function Education() {
   return (
-    <section id="education" className="px-6 py-32 bg-slate-900/30">
+    <section id="education" className="px-6 py-16 md:py-32 bg-slate-900/30">
       <div className="max-w-4xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-16">
             <p className="text-cyan-400 font-medium tracking-wider text-sm mb-3">
               EDUCATION
             </p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-white">
               My Journey
             </h2>
           </div>
@@ -45,18 +45,20 @@ export default function Education() {
                 <div className="relative pl-0 md:pl-20">
                   <div className="absolute left-6 top-1 w-5 h-5 bg-cyan-400 rounded-full border-4 border-slate-950 hidden md:block" />
                   <div className="bg-slate-900/50 border border-slate-800 hover:border-cyan-400/20 rounded-xl p-6 transition-colors">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="font-heading text-xl font-semibold text-white mb-1">
-                          {item.degree}
-                        </h3>
-                        <p className="text-cyan-400 text-sm">
-                          {item.school}
-                        </p>
+                    <div className="mb-4">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4">
+                        <div>
+                          <h3 className="font-heading text-xl font-semibold text-white mb-1">
+                            {item.degree}
+                          </h3>
+                          <p className="text-cyan-400 text-sm">
+                            {item.school}
+                          </p>
+                        </div>
+                        <span className="text-slate-500 text-sm whitespace-nowrap">
+                          {item.date}
+                        </span>
                       </div>
-                      <span className="text-slate-500 text-sm whitespace-nowrap ml-4">
-                        {item.date}
-                      </span>
                     </div>
                     <p className="text-slate-500 text-sm mb-3">
                       {item.status}

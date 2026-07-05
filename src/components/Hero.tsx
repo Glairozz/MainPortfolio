@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center px-6 pt-32 pb-20 overflow-hidden"
+      className="relative min-h-screen flex items-center px-6 pt-24 sm:pt-32 pb-20 overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-950 to-slate-950 pointer-events-none" />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -22,14 +22,14 @@ export default function Hero() {
           <p className="text-cyan-400 font-medium tracking-wider text-sm mb-4">
             HI, I'M
           </p>
-          <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
             Glairozz Blair
             <span className="block mt-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Punay
             </span>
           </h1>
 
-          <div className="flex items-center gap-2 text-lg md:text-xl text-slate-300 mb-6 h-8">
+          <div className="flex flex-wrap items-center gap-2 text-lg md:text-xl text-slate-300 mb-6 min-h-8">
             <span>I am a</span>
             <Typewriter
               texts={[

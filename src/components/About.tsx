@@ -33,14 +33,14 @@ const badges = [
 
 export default function About() {
   return (
-    <section id="about" className="px-6 py-32">
+    <section id="about" className="px-6 py-16 md:py-32">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-16">
             <p className="text-cyan-400 font-medium tracking-wider text-sm mb-3">
               ABOUT ME
             </p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-white">
               Who I Am
             </h2>
           </div>
@@ -71,7 +71,7 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {badges.map((badge) => (
                 <motion.div
                   key={badge.title}

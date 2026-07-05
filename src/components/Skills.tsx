@@ -34,14 +34,14 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-6 py-32">
+    <section id="skills" className="px-6 py-16 md:py-32">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-16">
             <p className="text-cyan-400 font-medium tracking-wider text-sm mb-3">
               SKILLS
             </p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-white">
               Technologies I Use
             </h2>
           </div>
