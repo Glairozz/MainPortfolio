@@ -75,9 +75,9 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden md:flex justify-center"
+          className="flex justify-center"
         >
-          <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-2xl blur-xl" />
             <div className="relative w-full h-full rounded-2xl overflow-hidden border border-slate-800">
               <img
