@@ -5,30 +5,102 @@
   --font-heading: var(--font-heading);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
     monospace;
-  --color-background: #020617;
-  --color-foreground: #cbd5e1;
-  --color-accent: #22d3ee;
-  --color-accent-dark: #0891b2;
-  --color-card: #0f172a;
-  --color-card-hover: #1e293b;
-  --color-card-border: #1e293b;
+  --color-background: var(--zz-background);
+  --color-surface: var(--zz-surface);
+  --color-surface-2: var(--zz-surface-2);
+  --color-line: var(--zz-border);
+  --color-line-strong: var(--zz-border-strong);
+  --color-content: var(--zz-text);
+  --color-body: var(--zz-body);
+  --color-muted: var(--zz-muted);
+  --color-faint: var(--zz-faint);
+  --color-accent: var(--zz-accent);
+  --color-accent-strong: var(--zz-accent-strong);
+  --color-accent-contrast: var(--zz-accent-contrast);
+}
+
+/* ---- Design tokens ---- */
+
+:root {
+  --zz-background: #020617;
+  --zz-surface: #0f172a;
+  --zz-surface-2: #1e293b;
+  --zz-border: #1e293b;
+  --zz-border-strong: #334155;
+  --zz-text: #f1f5f9;
+  --zz-body: #cbd5e1;
+  --zz-muted: #94a3b8;
+  --zz-faint: #64748b;
+  --zz-accent: #22d3ee;
+  --zz-accent-strong: #06b6d4;
+  --zz-accent-contrast: #020617;
+  --zz-glow-a: rgba(34, 211, 238, 0.1);
+  --zz-glow-b: rgba(8, 145, 178, 0.1);
+  --zz-grid: rgba(100, 116, 139, 0.055);
+  --zz-scanline: rgba(148, 163, 184, 0.05);
+  --zz-vignette: rgba(2, 6, 23, 0.8);
+}
+
+[data-theme="dark"] {
+  --zz-background: #020617;
+  --zz-surface: #0f172a;
+  --zz-surface-2: #1e293b;
+  --zz-border: #1e293b;
+  --zz-border-strong: #334155;
+  --zz-text: #f1f5f9;
+  --zz-body: #cbd5e1;
+  --zz-muted: #94a3b8;
+  --zz-faint: #64748b;
+  --zz-accent: #22d3ee;
+  --zz-accent-strong: #06b6d4;
+  --zz-accent-contrast: #020617;
+  --zz-glow-a: rgba(34, 211, 238, 0.1);
+  --zz-glow-b: rgba(8, 145, 178, 0.1);
+  --zz-grid: rgba(100, 116, 139, 0.055);
+  --zz-scanline: rgba(148, 163, 184, 0.05);
+  --zz-vignette: rgba(2, 6, 23, 0.8);
+}
+
+[data-theme="light"] {
+  --zz-background: #f1f5f9;
+  --zz-surface: #ffffff;
+  --zz-surface-2: #e2e8f0;
+  --zz-border: #e2e8f0;
+  --zz-border-strong: #cbd5e1;
+  --zz-text: #0f172a;
+  --zz-body: #334155;
+  --zz-muted: #64748b;
+  --zz-faint: #94a3b8;
+  --zz-accent: #0891b2;
+  --zz-accent-strong: #0e7490;
+  --zz-accent-contrast: #f8fafc;
+  --zz-glow-a: rgba(8, 145, 178, 0.09);
+  --zz-glow-b: rgba(34, 211, 238, 0.07);
+  --zz-grid: rgba(15, 23, 42, 0.06);
+  --zz-scanline: rgba(15, 23, 42, 0.03);
+  --zz-vignette: rgba(226, 232, 240, 0.4);
 }
 
 html {
   scroll-behavior: auto;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
 }
 
 body {
-  background-color: #020617;
-  color: #cbd5e1;
+  background-color: var(--zz-background);
+  color: var(--zz-body);
   font-family: var(--font-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.25);
-  color: #e2e8f0;
+  background: color-mix(in srgb, var(--zz-accent) 28%, transparent);
+  color: var(--zz-text);
 }
 
 ::-webkit-scrollbar {
@@ -36,15 +108,20 @@ body {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: var(--zz-background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border: 2px solid #020617;
+  background: var(--zz-surface-2);
+  border: 2px solid var(--zz-background);
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: var(--zz-border-strong);
+}
+
+:focus-visible {
+  outline: 2px solid var(--zz-accent);
+  outline-offset: 2px;
 }
 
 /* ---- Engine background ---- */
@@ -55,7 +132,7 @@ body {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background-color: #020617;
+  background-color: var(--zz-background);
 }
 
 .zz-engine-grid {
@@ -63,10 +140,10 @@ body {
   inset: 0;
   background-image: linear-gradient(
       to right,
-      rgba(100, 116, 139, 0.055) 1px,
+      var(--zz-grid) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgba(100, 116, 139, 0.055) 1px, transparent 1px);
+    linear-gradient(to bottom, var(--zz-grid) 1px, transparent 1px);
   background-size: 54px 54px;
   -webkit-mask-image: radial-gradient(
     ellipse 120% 90% at 50% 0%,
@@ -92,11 +169,7 @@ body {
   left: -12%;
   width: 52vw;
   height: 52vw;
-  background: radial-gradient(
-    circle,
-    rgba(34, 211, 238, 0.1),
-    transparent 62%
-  );
+  background: radial-gradient(circle, var(--zz-glow-a), transparent 62%);
   animation: zz-drift 22s ease-in-out infinite alternate;
 }
 
@@ -105,11 +178,7 @@ body {
   right: -14%;
   width: 46vw;
   height: 46vw;
-  background: radial-gradient(
-    circle,
-    rgba(8, 145, 178, 0.1),
-    transparent 62%
-  );
+  background: radial-gradient(circle, var(--zz-glow-b), transparent 62%);
   animation: zz-drift 30s ease-in-out infinite alternate-reverse;
 }
 
@@ -119,8 +188,8 @@ body {
   opacity: 0.45;
   background-image: repeating-linear-gradient(
     to bottom,
-    rgba(148, 163, 184, 0.05) 0px,
-    rgba(148, 163, 184, 0.05) 1px,
+    var(--zz-scanline) 0px,
+    var(--zz-scanline) 1px,
     transparent 1px,
     transparent 3px
   );
@@ -133,7 +202,7 @@ body {
   background: radial-gradient(
     ellipse 80% 70% at 50% 40%,
     transparent 55%,
-    rgba(2, 6, 23, 0.8) 100%
+    var(--zz-vignette) 100%
   );
 }
 
@@ -171,11 +240,54 @@ body {
   animation: zz-spin 60s linear infinite;
 }
 
+/* ---- Certificate scan sweep ---- */
+
+.zz-scan-sweep {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -6px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--zz-accent), transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.zz-scanned .zz-scan-sweep {
+  animation: zz-scan-sweep 0.9s ease-in-out 0.25s 1;
+}
+
+@keyframes zz-scan-sweep {
+  0% {
+    top: -6px;
+    opacity: 0.9;
+  }
+  90% {
+    top: 100%;
+    opacity: 0.9;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
 /* ---- Custom cursor ---- */
 
 .zz-cursor-on,
 .zz-cursor-on * {
   cursor: none !important;
+}
+
+/* ---- Theme transition ---- */
+
+html.zz-theme-anim,
+html.zz-theme-anim *,
+html.zz-theme-anim *::before,
+html.zz-theme-anim *::after {
+  transition: background-color 0.35s ease, color 0.35s ease,
+    border-color 0.35s ease, box-shadow 0.35s ease, fill 0.35s ease,
+    stroke 0.35s ease;
 }
 
 /* ---- Reduced motion ---- */

@@ -35,15 +35,15 @@ export default function PageTransition({
         {processing && (
           <motion.div
             key={pathname}
-            className="fixed inset-0 z-[250] flex items-center justify-center bg-[#020617]"
+            className="fixed inset-0 z-[250] flex items-center justify-center bg-background"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: reduce ? 0.05 : 0.3 }}
             aria-hidden
           >
-            <div className="font-mono text-xs tracking-[0.3em] text-cyan-300 text-center">
+            <div className="font-mono text-xs tracking-[0.3em] text-accent text-center">
               PROCESSING {targetModule.code}
-              <div className="mt-3 h-px w-40 mx-auto bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+              <div className="mt-3 h-px w-40 mx-auto bg-gradient-to-r from-transparent via-accent to-transparent" />
             </div>
           </motion.div>
         )}

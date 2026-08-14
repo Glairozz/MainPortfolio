@@ -103,7 +103,7 @@ export function getModuleByPath(pathname: string): ModuleInfo {
 }
 
 export const STATUS_STYLES: Record<SystemStatus, string> = {
-  ONLINE: "bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.9)]",
+  ONLINE: "bg-accent shadow-[0_0_10px_var(--zz-glow-a)]",
   ACTIVE: "bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]",
   IDLE: "bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.7)]",
   STANDBY: "bg-slate-400 shadow-[0_0_10px_rgba(148,163,184,0.6)]",

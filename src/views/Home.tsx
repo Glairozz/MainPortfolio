@@ -42,14 +42,14 @@ export default function Home() {
         className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center py-24"
       >
         <div>
-          <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2.5 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/70 backdrop-blur-sm font-mono text-[11px] tracking-widest mb-8">
-            <span className="text-slate-500">{activeModule.code}</span>
-            <span className="text-cyan-400/60">{"//"}</span>
-            <span className="text-cyan-300">
+          <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2.5 px-4 py-1.5 rounded-full border border-line bg-surface/70 backdrop-blur-sm font-mono text-[11px] tracking-widest mb-8">
+            <span className="text-faint">{activeModule.code}</span>
+            <span className="text-accent/60">{"//"}</span>
+            <span className="text-accent">
               {activeModule.name.toUpperCase()}
             </span>
-            <span className="h-3 w-px bg-slate-700" />
-            <span className="inline-flex items-center gap-2 text-slate-400">
+            <span className="h-3 w-px bg-line-strong" />
+            <span className="inline-flex items-center gap-2 text-muted">
               <span
                 className={`h-2 w-2 rounded-full ${STATUS_STYLES[activeModule.status]}`}
               />
@@ -57,15 +57,15 @@ export default function Home() {
             </span>
           </div>
 
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-content leading-[1.08] mb-6">
             Glairozz Blair
-            <span className="block mt-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="block mt-2 bg-gradient-to-r from-accent to-accent-strong bg-clip-text text-transparent">
               Punay
             </span>
           </h1>
 
-          <div className="flex flex-wrap items-center gap-2 text-lg md:text-xl text-slate-300 mb-6 min-h-8 font-mono">
-            <span className="text-slate-500">&gt;</span>
+          <div className="flex flex-wrap items-center gap-2 text-lg md:text-xl text-body mb-6 min-h-8 font-mono">
+            <span className="text-faint">&gt;</span>
             <Typewriter
               texts={[
                 "Aspiring Software Engineer",
@@ -76,7 +76,7 @@ export default function Home() {
             />
           </div>
 
-          <p className="text-slate-400 text-base md:text-lg max-w-lg leading-relaxed mb-10">
+          <p className="text-muted text-base md:text-lg max-w-lg leading-relaxed mb-10">
             1st-year aspiring software engineer who loves diving into new ideas,
             building things from scratch, and figuring out how technology works
             behind the scenes.
@@ -87,7 +87,7 @@ export default function Home() {
               href="/projects"
               whileHover={reduce ? undefined : { scale: 1.05, y: -2 }}
               whileTap={reduce ? undefined : { scale: 0.98 }}
-              className="group inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-8 py-3.5 rounded-xl transition-colors"
+              className="group inline-flex items-center gap-2 bg-accent-strong hover:bg-accent text-accent-contrast font-semibold px-8 py-3.5 rounded-xl transition-colors"
             >
               View Projects
               <ArrowRight
@@ -99,7 +99,7 @@ export default function Home() {
               href="/contact"
               whileHover={reduce ? undefined : { scale: 1.05, y: -2 }}
               whileTap={reduce ? undefined : { scale: 0.98 }}
-              className="inline-flex items-center gap-2 border border-slate-700 hover:border-cyan-400/50 text-slate-300 hover:text-white font-semibold px-8 py-3.5 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 border border-line hover:border-accent/50 text-body hover:text-content font-semibold px-8 py-3.5 rounded-xl transition-colors"
             >
               Get In Touch
             </MotionLink>
@@ -108,31 +108,31 @@ export default function Home() {
 
         <motion.div style={{ y }} className="relative flex justify-center lg:justify-end">
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[24rem] lg:h-[24rem] mb-8">
-            <div className="zz-spin-slow absolute -inset-4 rounded-[2rem] border border-dashed border-cyan-400/20" />
-            <div className="absolute -top-2 -left-2 h-9 w-9 border-t-2 border-l-2 border-cyan-400" />
-            <div className="absolute -top-2 -right-2 h-9 w-9 border-t-2 border-r-2 border-cyan-400" />
-            <div className="absolute -bottom-2 -left-2 h-9 w-9 border-b-2 border-l-2 border-cyan-400" />
-            <div className="absolute -bottom-2 -right-2 h-9 w-9 border-b-2 border-r-2 border-cyan-400" />
+            <div className="zz-spin-slow absolute -inset-4 rounded-[2rem] border border-dashed border-accent/20" />
+            <div className="absolute -top-2 -left-2 h-9 w-9 border-t-2 border-l-2 border-accent" />
+            <div className="absolute -top-2 -right-2 h-9 w-9 border-t-2 border-r-2 border-accent" />
+            <div className="absolute -bottom-2 -left-2 h-9 w-9 border-b-2 border-l-2 border-accent" />
+            <div className="absolute -bottom-2 -right-2 h-9 w-9 border-b-2 border-r-2 border-accent" />
 
-            <div className="relative w-full h-full overflow-hidden rounded-[1.75rem] border border-slate-800 bg-slate-900">
+            <div className="relative w-full h-full overflow-hidden rounded-[1.75rem] border border-line bg-surface">
               <img
                 src="/assets/images/profile/me photo.png"
                 alt="Glairozz Blair Punay"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/90 to-transparent" />
-              <div className="absolute bottom-3 left-3 font-mono text-[10px] tracking-widest text-cyan-300">
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/90 to-transparent" />
+              <div className="absolute bottom-3 left-3 font-mono text-[10px] tracking-widest text-accent">
                 OPERATOR :: BLAIR P.
               </div>
             </div>
 
-            <div className="absolute -bottom-7 inset-x-4 grid grid-cols-2 gap-x-4 gap-y-2 rounded-xl border border-slate-800 bg-slate-950/90 backdrop-blur-md px-4 py-3">
+            <div className="absolute -bottom-7 inset-x-4 grid grid-cols-2 gap-x-4 gap-y-2 rounded-xl border border-line bg-background/90 backdrop-blur-md px-4 py-3">
               {coreStats.map((stat) => (
                 <div key={stat.label}>
-                  <p className="font-mono text-[9px] tracking-widest text-slate-600">
+                  <p className="font-mono text-[9px] tracking-widest text-faint">
                     {stat.label}
                   </p>
-                  <p className="font-mono text-xs text-cyan-300">{stat.value}</p>
+                  <p className="font-mono text-xs text-accent">{stat.value}</p>
                 </div>
               ))}
             </div>
@@ -142,7 +142,7 @@ export default function Home() {
 
       <motion.div
         style={{ opacity: fade }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-600"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-faint"
         aria-hidden
       >
         <span className="font-mono text-[10px] tracking-[0.3em]">SCROLL</span>

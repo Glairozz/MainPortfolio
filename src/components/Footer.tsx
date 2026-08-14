@@ -3,18 +3,18 @@ import { socials } from "@/data/socials";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800/80">
-      <div className="h-px bg-gradient-to-r from-transparent via-slate-700/60 to-transparent" />
+    <footer className="border-t border-line">
+      <div className="h-px bg-gradient-to-r from-transparent via-line-strong/60 to-transparent" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-        <p className="font-mono text-[11px] text-slate-500 tracking-wide">
-          <span className="text-cyan-400">blair@zzoryx</span>
-          <span className="text-slate-600">:</span>
-          <span className="text-blue-400/70">~/engine</span>
-          <span className="text-slate-400">$</span>{" "}
-          <span className="zz-blink text-cyan-400">▊</span>
+        <p className="font-mono text-[11px] text-muted tracking-wide">
+          <span className="text-accent">blair@zzoryx</span>
+          <span className="text-faint">:</span>
+          <span className="text-accent-strong/80">~/engine</span>
+          <span className="text-muted">$</span>{" "}
+          <span className="zz-blink text-accent">▊</span>
         </p>
 
-        <p className="font-mono text-[11px] text-slate-600 tracking-wide text-center">
+        <p className="font-mono text-[11px] text-faint tracking-wide text-center">
           &copy; 2026 GLAIROZZ BLAIR PUNAY — ALL MODULES OPERATIONAL
         </p>
 
@@ -26,7 +26,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="text-slate-500 hover:text-cyan-400 transition-all duration-200 hover:-translate-y-0.5"
+              className="text-muted hover:text-accent transition-all duration-200 hover:-translate-y-0.5"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -41,7 +41,7 @@ export default function Footer() {
           <a
             href="mailto:ibotpunay@gmail.com"
             aria-label="Email"
-            className="text-slate-500 hover:text-cyan-400 transition-all duration-200 hover:-translate-y-0.5"
+            className="text-muted hover:text-accent transition-all duration-200 hover:-translate-y-0.5"
           >
             <Mail size={18} />
           </a>

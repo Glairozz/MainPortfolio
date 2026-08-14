@@ -31,7 +31,7 @@ export default function BootLoader() {
     <AnimatePresence>
       {phase !== "done" && (
         <motion.div
-          className="fixed inset-0 z-[300] flex items-center justify-center bg-[#020617]"
+          className="fixed inset-0 z-[300] flex items-center justify-center bg-background"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: reduce ? 0.05 : 0.35 }}
@@ -39,24 +39,24 @@ export default function BootLoader() {
         >
           <div className="w-full max-w-md px-8">
             <div className="mb-8 text-center">
-              <p className="font-heading text-4xl font-bold tracking-[0.35em] text-white">
+              <p className="font-heading text-4xl font-bold tracking-[0.35em] text-content">
                 ZZORYX
               </p>
-              <p className="mt-2 text-[11px] tracking-[0.4em] text-cyan-400/80 font-mono">
+              <p className="mt-2 text-[11px] tracking-[0.4em] text-accent/80 font-mono">
                 PERSONAL PROCESSING ENGINE
               </p>
             </div>
 
-            <div className="h-1 w-full bg-slate-800 overflow-hidden rounded-full">
+            <div className="h-1 w-full bg-surface-2 overflow-hidden rounded-full">
               <motion.div
-                className="h-full bg-gradient-to-r from-cyan-500 to-blue-500"
+                className="h-full bg-gradient-to-r from-accent-strong to-accent"
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
                 transition={{ duration: reduce ? 0.1 : 1.05, ease: "easeInOut" }}
               />
             </div>
 
-            <div className="mt-6 min-h-[7rem] font-mono text-xs leading-6 text-slate-400">
+            <div className="mt-6 min-h-[7rem] font-mono text-xs leading-6 text-muted">
               {BOOT_LINES.map((line, i) => (
                 <motion.p
                   key={line}
@@ -66,12 +66,12 @@ export default function BootLoader() {
                     delay: reduce ? 0 : 0.15 + i * 0.18,
                     duration: 0.1,
                   }}
-                  className={i === BOOT_LINES.length - 1 ? "text-cyan-300" : ""}
+                  className={i === BOOT_LINES.length - 1 ? "text-accent" : ""}
                 >
                   {line}
                 </motion.p>
               ))}
-              <span className="zz-blink text-cyan-400">▊</span>
+              <span className="zz-blink text-accent">▊</span>
             </div>
           </div>
         </motion.div>

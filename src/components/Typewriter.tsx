@@ -52,7 +52,7 @@ export default function Typewriter({ texts, speed = 80 }: TypewriterProps) {
   return (
     <span>
       {display}
-      <span className="animate-pulse text-cyan-400">|</span>
+      <span className="animate-pulse text-accent">|</span>
     </span>
   );
 }

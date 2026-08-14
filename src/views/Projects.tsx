@@ -34,8 +34,8 @@ export default function Projects() {
                 onClick={() => setActive(cat)}
                 className={`px-4 py-2 rounded-lg text-xs font-mono tracking-widest transition-colors border ${
                   active === cat
-                    ? "bg-cyan-400/15 text-cyan-300 border-cyan-400/40"
-                    : "bg-slate-900/40 text-slate-400 hover:text-white hover:bg-slate-800/60 border-slate-800"
+                    ? "bg-accent/15 text-accent border-accent/40"
+                    : "bg-surface/60 text-muted hover:text-body hover:bg-surface-2/70 border-line"
                 }`}
               >
                 {cat.toUpperCase()}

@@ -34,45 +34,45 @@ export default function Education() {
         />
 
         <div className="relative">
-          <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-slate-800" />
+          <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-line" />
 
           <div className="space-y-10">
             {education.map((item, i) => (
               <ScrollReveal key={item.degree} delay={i * 0.1}>
                 <div className="relative pl-12 md:pl-20">
                   <div className="absolute left-4 md:left-6 top-7 -translate-x-1/2 flex items-center justify-center">
-                    <span className="relative flex h-6 w-6 items-center justify-center rounded-full border border-cyan-400/50 bg-slate-950">
-                      <span className="h-2 w-2 rounded-full bg-cyan-400" />
+                    <span className="relative flex h-6 w-6 items-center justify-center rounded-full border border-accent/50 bg-background">
+                      <span className="h-2 w-2 rounded-full bg-accent" />
                     </span>
                   </div>
 
-                  <div className="group bg-slate-900/40 border border-slate-800 hover:border-cyan-400/20 rounded-xl p-6 transition-colors">
+                  <div className="group bg-surface/60 border border-line hover:border-accent/20 rounded-xl p-6 transition-colors">
                     <div className="mb-4 flex items-start justify-between gap-2 flex-wrap">
-                      <span className="font-mono text-[10px] tracking-widest text-slate-600">
+                      <span className="font-mono text-[10px] tracking-widest text-faint">
                         EDU-{String(i + 1).padStart(3, "0")}
                       </span>
-                      <span className="inline-flex items-center gap-1.5 text-slate-400 text-xs font-mono whitespace-nowrap bg-slate-800/70 border border-slate-700/50 px-3 py-1.5 rounded-lg">
-                        <Calendar size={13} className="text-cyan-400" />
+                      <span className="inline-flex items-center gap-1.5 text-muted text-xs font-mono whitespace-nowrap bg-surface-2/80 border border-line px-3 py-1.5 rounded-lg">
+                        <Calendar size={13} className="text-accent" />
                         {item.date}
                       </span>
                     </div>
 
                     <div className="mb-4">
-                      <h3 className="font-heading text-xl font-semibold text-white mb-1">
+                      <h3 className="font-heading text-xl font-semibold text-content mb-1">
                         {item.degree}
                       </h3>
-                      <p className="text-cyan-400 text-sm">{item.school}</p>
+                      <p className="text-accent text-sm">{item.school}</p>
                     </div>
 
-                    <p className="inline-flex items-center gap-1.5 text-slate-300 text-sm mb-3 bg-slate-800/70 border border-slate-700/50 px-3 py-1.5 rounded-lg">
-                      <CircleCheck size={14} className="text-emerald-400" />
+                    <p className="inline-flex items-center gap-1.5 text-body text-sm mb-3 bg-surface-2/80 border border-line px-3 py-1.5 rounded-lg">
+                      <CircleCheck size={14} className="text-emerald-500" />
                       {item.status}
                     </p>
 
-                    <p className="text-slate-400 leading-relaxed flex items-start gap-2">
+                    <p className="text-muted leading-relaxed flex items-start gap-2">
                       <BookOpen
                         size={16}
-                        className="text-slate-500 mt-1 shrink-0"
+                        className="text-faint mt-1 shrink-0"
                       />
                       {item.description}
                     </p>

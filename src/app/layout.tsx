@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import { MotionConfig } from "framer-motion";
 import "./globals.css";
+import ThemeProvider from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -28,6 +30,21 @@ export const metadata: Metadata = {
     "The personal processing engine of Glairozz Blair Punay — an aspiring software engineer and fullstack developer. Browse modules for identity, knowledge, technology, output, validation, and communication.",
 };
 
+const themeScript = `(function () {
+  try {
+    var stored = localStorage.getItem("zzoryx_theme");
+    var theme =
+      stored === "light" || stored === "dark"
+        ? stored
+        : window.matchMedia("(prefers-color-scheme: light)").matches
+        ? "light"
+        : "dark";
+    document.documentElement.setAttribute("data-theme", theme);
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+})();`;
+
 export default function RootLayout({
   children,
 }: {
@@ -36,17 +53,24 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body className="antialiased flex flex-col min-h-screen">
-        <MotionConfig reducedMotion="user">
-          <EngineBackground />
-          <BootLoader />
-          <CustomCursor />
-          <ScrollProgress />
-          <Navbar />
-          <main className="flex-1 pt-16">
-            <PageTransition>{children}</PageTransition>
-          </main>
-          <Footer />
-        </MotionConfig>
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeScript }}
+        />
+        <ThemeProvider>
+          <MotionConfig reducedMotion="user">
+            <EngineBackground />
+            <BootLoader />
+            <CustomCursor />
+            <ScrollProgress />
+            <Navbar />
+            <main className="flex-1 pt-16">
+              <PageTransition>{children}</PageTransition>
+            </main>
+            <Footer />
+          </MotionConfig>
+        </ThemeProvider>
       </body>
     </html>
   );

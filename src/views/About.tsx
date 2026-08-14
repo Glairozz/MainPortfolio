@@ -47,14 +47,14 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
           <ScrollReveal delay={0.1}>
-            <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-6 md:p-8">
-              <p className="font-mono text-[11px] tracking-widest text-slate-600 mb-4">
+            <div className="rounded-xl border border-line bg-surface/60 p-6 md:p-8">
+              <p className="font-mono text-[11px] tracking-widest text-faint mb-4">
                 IDN-001 // PROFILE
               </p>
-              <h3 className="font-heading text-2xl font-semibold text-white mb-6">
+              <h3 className="font-heading text-2xl font-semibold text-content mb-6">
                 Aspiring Software Engineer & Creative Problem Solver
               </h3>
-              <div className="space-y-4 text-slate-400 leading-relaxed">
+              <div className="space-y-4 text-muted leading-relaxed">
                 <p>
                   I&apos;m a 1st-year aspiring software engineer who loves
                   diving into new ideas, building things from scratch, and
@@ -74,7 +74,7 @@ export default function About() {
 
           <ScrollReveal delay={0.2}>
             <div>
-              <p className="font-mono text-[11px] tracking-widest text-slate-600 mb-4 text-center md:text-left">
+              <p className="font-mono text-[11px] tracking-widest text-faint mb-4 text-center md:text-left">
                 IDN-002 // TRAIT MODULES
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -82,16 +82,16 @@ export default function About() {
                   <motion.div
                     key={badge.title}
                     whileHover={{ y: -4 }}
-                    className="group relative bg-slate-900/40 border border-slate-800 hover:border-cyan-400/30 rounded-xl p-5 transition-colors"
+                    className="group relative bg-surface/60 border border-line hover:border-accent/30 rounded-xl p-5 transition-colors"
                   >
-                    <span className="absolute top-3 right-3 font-mono text-[9px] tracking-widest text-slate-700 group-hover:text-cyan-500/80 transition-colors">
+                    <span className="absolute top-3 right-3 font-mono text-[9px] tracking-widest text-faint group-hover:text-accent/80 transition-colors">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <badge.icon className="text-cyan-400 mb-3" size={22} />
-                    <h4 className="text-white font-semibold text-sm mb-1">
+                    <badge.icon className="text-accent mb-3" size={22} />
+                    <h4 className="text-content font-semibold text-sm mb-1">
                       {badge.title}
                     </h4>
-                    <p className="text-slate-500 text-xs leading-relaxed">
+                    <p className="text-muted text-xs leading-relaxed">
                       {badge.description}
                     </p>
                   </motion.div>
@@ -102,15 +102,15 @@ export default function About() {
         </div>
 
         <ScrollReveal>
-          <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-6 md:p-8">
+          <div className="rounded-xl border border-line bg-surface/60 p-6 md:p-8">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
-                <Rocket className="text-cyan-400" size={22} />
-                <h3 className="font-heading text-xl md:text-2xl font-semibold text-white">
+                <Rocket className="text-accent" size={22} />
+                <h3 className="font-heading text-xl md:text-2xl font-semibold text-content">
                   What I&apos;m Working Toward
                 </h3>
               </div>
-              <span className="hidden sm:inline-flex font-mono text-[10px] tracking-widest text-slate-600 border border-slate-800 rounded px-2 py-1">
+              <span className="hidden sm:inline-flex font-mono text-[10px] tracking-widest text-faint border border-line rounded px-2 py-1">
                 ROADMAP
               </span>
             </div>
@@ -118,12 +118,12 @@ export default function About() {
               {goals.map((goal, i) => (
                 <div
                   key={goal}
-                  className="flex items-start gap-3 rounded-lg border border-slate-800/70 bg-slate-950/40 px-4 py-3"
+                  className="flex items-start gap-3 rounded-lg border border-line bg-background/40 px-4 py-3"
                 >
-                  <span className="mt-0.5 font-mono text-[10px] text-cyan-500 shrink-0">
+                  <span className="mt-0.5 font-mono text-[10px] text-accent shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-slate-400 leading-relaxed">{goal}</p>
+                  <p className="text-muted leading-relaxed">{goal}</p>
                 </div>
               ))}
             </div>

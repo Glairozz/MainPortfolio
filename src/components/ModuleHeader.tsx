@@ -7,10 +7,12 @@ export default function ModuleHeader({
   module,
   subtitle,
   description,
+  meta,
 }: {
   module: ModuleInfo;
   subtitle: string;
   description?: string;
+  meta?: string;
 }) {
   const reduce = useReducedMotion();
 
@@ -21,18 +23,24 @@ export default function ModuleHeader({
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="mb-14 md:mb-16 text-center"
     >
-      <div className="inline-flex flex-wrap items-center justify-center gap-2.5 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/70 backdrop-blur-sm font-mono text-[11px] tracking-widest mb-6">
-        <span className="text-slate-500">{module.code}</span>
-        <span className="text-cyan-400/60">{"//"}</span>
-        <span className="text-cyan-300">{module.name.toUpperCase()}</span>
-        <span className="h-3 w-px bg-slate-700" />
+      <div className="inline-flex flex-wrap items-center justify-center gap-2.5 px-4 py-1.5 rounded-full border border-line bg-surface/70 backdrop-blur-sm font-mono text-[11px] tracking-widest mb-6">
+        <span className="text-faint">{module.code}</span>
+        <span className="text-accent/60">{"//"}</span>
+        <span className="text-accent">{module.name.toUpperCase()}</span>
+        <span className="h-3 w-px bg-line-strong" />
         <EngineStatus status={module.status} />
+        {meta && (
+          <>
+            <span className="h-3 w-px bg-line-strong" />
+            <span className="text-muted">{meta}</span>
+          </>
+        )}
       </div>
-      <h1 className="font-heading text-3xl md:text-5xl font-bold text-white">
+      <h1 className="font-heading text-3xl md:text-5xl font-bold text-content">
         {subtitle}
       </h1>
       {description && (
-        <p className="mt-4 max-w-2xl mx-auto text-slate-400 leading-relaxed">
+        <p className="mt-4 max-w-2xl mx-auto text-muted leading-relaxed">
           {description}
         </p>
       )}

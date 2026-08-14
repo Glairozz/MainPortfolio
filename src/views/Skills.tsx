@@ -42,13 +42,13 @@ export default function Skills() {
             const Icon = categoryIcons[category.title];
             return (
               <ScrollReveal key={category.title} delay={i * 0.05}>
-                <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div className="bg-surface/60 border border-line rounded-2xl p-6 md:p-8">
                   <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-                    <Icon className="text-cyan-400" size={20} />
-                    <h3 className="font-heading text-lg md:text-xl font-semibold text-white">
+                    <Icon className="text-accent" size={20} />
+                    <h3 className="font-heading text-lg md:text-xl font-semibold text-content">
                       {category.title}
                     </h3>
-                    <span className="font-mono text-[10px] tracking-widest text-slate-600 border border-slate-800 rounded px-2 py-0.5">
+                    <span className="font-mono text-[10px] tracking-widest text-faint border border-line rounded px-2 py-0.5">
                       {String(category.items.length).padStart(2, "0")} UNITS
                     </span>
                   </div>

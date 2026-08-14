@@ -21,8 +21,8 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
 
   if (!src || error) {
     return (
-      <div className="w-full h-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center">
-        <span className="text-slate-500 text-4xl font-heading font-bold">
+      <div className="w-full h-full bg-gradient-to-br from-line-strong to-surface-2 flex items-center justify-center">
+        <span className="text-faint text-4xl font-heading font-bold">
           {alt.charAt(0)}
         </span>
       </div>
@@ -52,25 +52,25 @@ export default function ProjectCard({
       : null;
 
   return (
-    <article className="group bg-slate-900/40 border border-slate-800 hover:border-cyan-400/30 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5">
+    <article className="group bg-surface/40 border border-line hover:border-accent/30 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5">
       <div className="relative h-48 overflow-hidden">
         <ProjectImage src={project.image} alt={project.title} />
-        <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-slate-950/80 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-background/80 to-transparent" />
         <div className="absolute top-2.5 inset-x-2.5 flex items-center justify-between gap-2">
-          <span className="font-mono text-[10px] tracking-widest text-cyan-300 bg-slate-950/80 backdrop-blur-sm border border-slate-700/60 px-2 py-1 rounded-md">
+          <span className="font-mono text-[10px] tracking-widest text-accent bg-background/80 backdrop-blur-sm border border-line px-2 py-1 rounded-md">
             {code ?? "OUTPUT"}
           </span>
-          <span className="text-[10px] font-mono tracking-widest text-slate-300 bg-slate-950/80 backdrop-blur-sm border border-slate-700/60 px-2 py-1 rounded-md">
+          <span className="text-[10px] font-mono tracking-widest text-body bg-background/80 backdrop-blur-sm border border-line px-2 py-1 rounded-md">
             {project.category.toUpperCase()}
           </span>
         </div>
       </div>
 
       <div className="p-5 flex flex-col gap-3">
-        <h3 className="font-heading text-lg font-semibold text-white">
+        <h3 className="font-heading text-lg font-semibold text-content">
           {project.title}
         </h3>
-        <p className="text-slate-400 text-sm leading-relaxed">
+        <p className="text-muted text-sm leading-relaxed">
           {project.description}
         </p>
 
@@ -78,20 +78,20 @@ export default function ProjectCard({
           {project.tech.map((tech) => (
             <span
               key={tech}
-              className="text-[11px] font-mono text-slate-400 bg-slate-800/70 border border-slate-700/50 px-2 py-1 rounded-md"
+              className="text-[11px] font-mono text-muted bg-surface-2/70 border border-line px-2 py-1 rounded-md"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-4 pt-2 mt-auto border-t border-slate-800/70">
+        <div className="flex flex-wrap gap-4 pt-2 mt-auto border-t border-line">
           {project.github && (
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors pt-2"
+              className="inline-flex items-center gap-1.5 text-accent hover:text-accent-strong text-sm font-medium transition-colors pt-2"
             >
               <GithubIcon className="w-4 h-4" />
               GitHub
@@ -102,7 +102,7 @@ export default function ProjectCard({
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors pt-2"
+              className="inline-flex items-center gap-1.5 text-accent hover:text-accent-strong text-sm font-medium transition-colors pt-2"
             >
               Live Demo <ExternalLink size={14} />
             </a>

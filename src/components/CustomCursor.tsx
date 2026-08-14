@@ -48,14 +48,14 @@ export default function CustomCursor() {
     <>
       <motion.div
         aria-hidden
-        className="fixed top-0 left-0 z-[200] w-8 h-8 rounded-full border border-cyan-400/70 pointer-events-none"
+        className="fixed top-0 left-0 z-[200] w-8 h-8 rounded-full border border-accent/70 pointer-events-none"
         style={{ x: springX, y: springY, translateX: "-50%", translateY: "-50%" }}
         animate={{ scale: hovering ? 1.7 : 1, opacity: hovering ? 0.9 : 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
       />
       <motion.div
         aria-hidden
-        className="fixed top-0 left-0 z-[201] w-1.5 h-1.5 rounded-full bg-cyan-400 pointer-events-none"
+        className="fixed top-0 left-0 z-[201] w-1.5 h-1.5 rounded-full bg-accent pointer-events-none"
         style={{ x, y, translateX: "-50%", translateY: "-50%" }}
       />
     </>
