@@ -290,6 +290,13 @@ html.zz-theme-anim *::after {
     stroke 0.35s ease;
 }
 
+/* ---- Boot scroll lock ---- */
+
+html.zz-boot-lock,
+html.zz-boot-lock body {
+  overflow: hidden;
+}
+
 /* ---- Reduced motion ---- */
 
 @media (prefers-reduced-motion: reduce) {
