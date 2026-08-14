@@ -32,8 +32,10 @@ export default function Typewriter({ texts, speed = 80 }: TypewriterProps) {
           setCharIndex((c) => c - 1);
         }, speed / 2);
       } else {
-        setIsDeleting(false);
-        setTextIndex((i) => (i + 1) % texts.length);
+        timeout = setTimeout(() => {
+          setIsDeleting(false);
+          setTextIndex((i) => (i + 1) % texts.length);
+        }, speed / 2);
       }
     }
 

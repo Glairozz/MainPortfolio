@@ -1,23 +1,12 @@
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Education from "@/components/Education";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Certificates from "@/components/Certificates";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+import Home from "@/views/Home";
 
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <About />
-      <Education />
-      <Skills />
-      <Projects />
-      <Certificates />
-      <Contact />
-      <Footer />
-    </>
-  );
+export const metadata: Metadata = {
+  title: "Glairozz Blair Punay - Software Engineer Portfolio",
+  description:
+    "Aspiring Software Engineer and Fullstack Developer showcasing projects, skills, and experience in web development and programming",
+};
+
+export default function HomePage() {
+  return <Home />;
 }

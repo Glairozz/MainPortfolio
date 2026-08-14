@@ -1,12 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Lightbulb,
-  GitBranch,
-  Users,
-} from "lucide-react";
-import ScrollReveal from "./ScrollReveal";
+import { Code2, Lightbulb, GitBranch, Users, Rocket } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const badges = [
   {
@@ -31,9 +26,16 @@ const badges = [
   },
 ];
 
+const goals = [
+  "Building robust, production-ready software that people actually use.",
+  "Deepening my understanding of data structures, algorithms, and system design.",
+  "Growing into a well-rounded fullstack engineer through hands-on projects.",
+  "Contributing meaningfully to open-source communities.",
+];
+
 export default function About() {
   return (
-    <section id="about" className="px-6 py-16 md:py-32">
+    <section className="px-6 py-16 md:py-28">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -90,6 +92,25 @@ export default function About() {
             </div>
           </ScrollReveal>
         </div>
+
+        <ScrollReveal>
+          <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-8 md:p-10">
+            <div className="flex items-center gap-3 mb-6">
+              <Rocket className="text-cyan-400" size={24} />
+              <h3 className="font-heading text-xl md:text-2xl font-semibold text-white">
+                What I&apos;m Working Toward
+              </h3>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {goals.map((goal) => (
+                <div key={goal} className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 bg-cyan-400 rounded-full shrink-0" />
+                  <p className="text-slate-400 leading-relaxed">{goal}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 
 const heading = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -28,7 +30,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-1 pt-16">
+          <PageTransition>{children}</PageTransition>
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }

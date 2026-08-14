@@ -1,14 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import Typewriter from "./Typewriter";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Typewriter from "@/components/Typewriter";
 
-export default function Hero() {
+const MotionLink = motion.create(Link);
+
+export default function Home() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center px-6 pt-24 sm:pt-32 pb-20 overflow-hidden"
-    >
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center px-6 pb-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-950 to-slate-950 pointer-events-none" />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -20,7 +20,7 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <p className="text-cyan-400 font-medium tracking-wider text-sm mb-4">
-            HI, I'M
+            HI, I&apos;M
           </p>
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
             Glairozz Blair
@@ -48,8 +48,8 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <motion.a
-              href="#projects"
+            <MotionLink
+              href="/projects"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
               className="group inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-8 py-3.5 rounded-xl transition-colors"
@@ -59,15 +59,15 @@ export default function Hero() {
                 size={18}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
-            </motion.a>
-            <motion.a
-              href="#contact"
+            </MotionLink>
+            <MotionLink
+              href="/contact"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-2 border border-slate-700 hover:border-cyan-400/50 text-slate-300 hover:text-white font-semibold px-8 py-3.5 rounded-xl transition-colors"
             >
               Get In Touch
-            </motion.a>
+            </MotionLink>
           </div>
         </motion.div>
 
@@ -89,15 +89,6 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <ChevronDown className="text-slate-500 animate-bounce" size={24} />
-      </motion.div>
     </section>
   );
 }

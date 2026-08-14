@@ -12,10 +12,6 @@
   --color-card-border: #1e293b;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: #020617;
   color: #cbd5e1;
