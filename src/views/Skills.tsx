@@ -3,8 +3,13 @@ import { CodeXml, Layers, Database, Wrench } from "lucide-react";
 import { techStack } from "@/data/techStack";
 import TechCard from "@/components/TechCard";
 import ScrollReveal from "@/components/ScrollReveal";
+import ModuleHeader from "@/components/ModuleHeader";
+import { MODULES } from "@/data/modules";
 
-const categoryIcons: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const categoryIcons: Record<
+  string,
+  React.ComponentType<{ size?: number; className?: string }>
+> = {
   "Programming Languages": CodeXml,
   "Frameworks & Libraries": Layers,
   Databases: Database,
@@ -24,38 +29,32 @@ function gridClass(title: string) {
 
 export default function Skills() {
   return (
-    <section className="px-6 py-16 md:py-28">
+    <section className="px-4 sm:px-6 py-16 md:py-24">
       <div className="max-w-6xl mx-auto">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <p className="text-cyan-400 font-medium tracking-wider text-sm mb-3">
-              SKILLS
-            </p>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-white">
-              Skills & Tech Stack
-            </h2>
-            <p className="text-slate-400 mt-4 max-w-2xl mx-auto leading-relaxed">
-              The technologies, languages, and tools I use to build and ship
-              projects.
-            </p>
-          </div>
-        </ScrollReveal>
+        <ModuleHeader
+          module={MODULES[3]}
+          subtitle="Skills & Tech Stack"
+          description="The technologies, languages, and tools I use to build and ship projects."
+        />
 
-        <div className="space-y-14">
+        <div className="space-y-10">
           {techStack.map((category, i) => {
             const Icon = categoryIcons[category.title];
             return (
               <ScrollReveal key={category.title} delay={i * 0.05}>
                 <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 md:p-8">
-                  <div className="flex items-center justify-center gap-3 mb-8">
-                    <Icon className="text-cyan-400" size={22} />
+                  <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+                    <Icon className="text-cyan-400" size={20} />
                     <h3 className="font-heading text-lg md:text-xl font-semibold text-white">
                       {category.title}
                     </h3>
+                    <span className="font-mono text-[10px] tracking-widest text-slate-600 border border-slate-800 rounded px-2 py-0.5">
+                      {String(category.items.length).padStart(2, "0")} UNITS
+                    </span>
                   </div>
                   <div className={`grid ${gridClass(category.title)} gap-4`}>
-                    {category.items.map((item) => (
-                      <TechCard key={item.name} item={item} />
+                    {category.items.map((item, idx) => (
+                      <TechCard key={item.name} item={item} index={idx} />
                     ))}
                   </div>
                 </div>

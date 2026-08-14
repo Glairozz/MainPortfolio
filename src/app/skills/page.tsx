@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Skills from "@/views/Skills";
 
 export const metadata: Metadata = {
-  title: "Skills & Tech Stack - Glairozz Blair Punay",
+  title: "Technology — ZZORYX",
   description:
-    "Programming languages, frameworks, databases, and development tools used by Glairozz Blair Punay.",
+    "Technology module of ZZORYX — the languages, frameworks, databases, and tools used by Glairozz Blair Punay.",
 };
 
 export default function SkillsPage() {

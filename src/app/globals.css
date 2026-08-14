@@ -3,6 +3,8 @@
 @theme inline {
   --font-sans: var(--font-body);
   --font-heading: var(--font-heading);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+    monospace;
   --color-background: #020617;
   --color-foreground: #cbd5e1;
   --color-accent: #22d3ee;
@@ -12,8 +14,179 @@
   --color-card-border: #1e293b;
 }
 
+html {
+  scroll-behavior: auto;
+}
+
 body {
   background-color: #020617;
   color: #cbd5e1;
   font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+  color: #e2e8f0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border: 2px solid #020617;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* ---- Engine background ---- */
+
+.zz-engine-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: #020617;
+}
+
+.zz-engine-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(100, 116, 139, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(100, 116, 139, 0.055) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 120% 90% at 50% 0%,
+    black 10%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 120% 90% at 50% 0%,
+    black 10%,
+    transparent 78%
+  );
+}
+
+.zz-engine-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  will-change: transform;
+}
+
+.zz-engine-glow-a {
+  top: -18%;
+  left: -12%;
+  width: 52vw;
+  height: 52vw;
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.1),
+    transparent 62%
+  );
+  animation: zz-drift 22s ease-in-out infinite alternate;
+}
+
+.zz-engine-glow-b {
+  bottom: -22%;
+  right: -14%;
+  width: 46vw;
+  height: 46vw;
+  background: radial-gradient(
+    circle,
+    rgba(8, 145, 178, 0.1),
+    transparent 62%
+  );
+  animation: zz-drift 30s ease-in-out infinite alternate-reverse;
+}
+
+.zz-engine-scanlines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(148, 163, 184, 0.05) 0px,
+    rgba(148, 163, 184, 0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+}
+
+.zz-engine-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 70% at 50% 40%,
+    transparent 55%,
+    rgba(2, 6, 23, 0.8) 100%
+  );
+}
+
+@keyframes zz-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(6vw, 4vh, 0) scale(1.15);
+  }
+}
+
+@keyframes zz-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.zz-blink {
+  animation: zz-blink 1.1s step-end infinite;
+}
+
+@keyframes zz-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.zz-spin-slow {
+  animation: zz-spin 60s linear infinite;
+}
+
+/* ---- Custom cursor ---- */
+
+.zz-cursor-on,
+.zz-cursor-on * {
+  cursor: none !important;
+}
+
+/* ---- Reduced motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

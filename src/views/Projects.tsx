@@ -1,13 +1,16 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { projects, projectCategories } from "@/data/projects";
 import type { ProjectCategory } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import ScrollReveal from "@/components/ScrollReveal";
+import ModuleHeader from "@/components/ModuleHeader";
+import { MODULES } from "@/data/modules";
 
 export default function Projects() {
   const [active, setActive] = useState<"All" | ProjectCategory>("All");
+  const reduce = useReducedMotion();
 
   const filtered =
     active === "All"
@@ -15,32 +18,27 @@ export default function Projects() {
       : projects.filter((p) => p.category === active);
 
   return (
-    <section className="px-6 py-16 md:py-28">
+    <section className="px-4 sm:px-6 py-16 md:py-24">
       <div className="max-w-6xl mx-auto">
-        <ScrollReveal>
-          <div className="text-center mb-12">
-            <p className="text-cyan-400 font-medium tracking-wider text-sm mb-3">
-              PROJECTS
-            </p>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-white">
-              What I&apos;ve Built
-            </h2>
-          </div>
-        </ScrollReveal>
+        <ModuleHeader
+          module={MODULES[4]}
+          subtitle="What I&apos;ve Built"
+          description="Output registry — shipped projects across web, games, and interface design."
+        />
 
         <ScrollReveal delay={0.1}>
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-2.5 mb-12">
             {projectCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-xs font-mono tracking-widest transition-colors border ${
                   active === cat
-                    ? "bg-cyan-500 text-slate-950"
-                    : "bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700/50"
+                    ? "bg-cyan-400/15 text-cyan-300 border-cyan-400/40"
+                    : "bg-slate-900/40 text-slate-400 hover:text-white hover:bg-slate-800/60 border-slate-800"
                 }`}
               >
-                {cat}
+                {cat.toUpperCase()}
               </button>
             ))}
           </div>
@@ -51,11 +49,11 @@ export default function Projects() {
             <motion.div
               key={project.title}
               layout
-              initial={{ opacity: 0, y: 20 }}
+              initial={reduce ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
+              transition={{ duration: 0.4, delay: reduce ? 0 : i * 0.05 }}
             >
-              <ProjectCard project={project} />
+              <ProjectCard project={project} index={i} />
             </motion.div>
           ))}
         </motion.div>

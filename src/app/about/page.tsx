@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import About from "@/views/About";
 
 export const metadata: Metadata = {
-  title: "About Me - Glairozz Blair Punay",
+  title: "Identity — ZZORYX",
   description:
-    "Learn more about Glairozz Blair Punay, an aspiring software engineer passionate about building innovative solutions.",
+    "Identity module of ZZORYX — who Glairozz Blair Punay is, his traits, and the roadmap he is processing.",
 };
 
 export default function AboutPage() {

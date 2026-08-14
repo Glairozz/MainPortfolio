@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useReducedMotion } from "framer-motion";
 
 interface TypewriterProps {
   texts: string[];
@@ -7,12 +8,14 @@ interface TypewriterProps {
 }
 
 export default function Typewriter({ texts, speed = 80 }: TypewriterProps) {
+  const reduce = useReducedMotion();
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [display, setDisplay] = useState("");
 
   useEffect(() => {
+    if (reduce) return;
     const current = texts[textIndex];
     let timeout: ReturnType<typeof setTimeout>;
 
@@ -40,7 +43,11 @@ export default function Typewriter({ texts, speed = 80 }: TypewriterProps) {
     }
 
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, textIndex, texts, speed]);
+  }, [charIndex, isDeleting, reduce, textIndex, texts, speed]);
+
+  if (reduce) {
+    return <span>{texts[0]}</span>;
+  }
 
   return (
     <span>

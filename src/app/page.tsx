@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Home from "@/views/Home";
 
 export const metadata: Metadata = {
-  title: "Glairozz Blair Punay - Software Engineer Portfolio",
+  title: "Engine Core — ZZORYX",
   description:
-    "Aspiring Software Engineer and Fullstack Developer showcasing projects, skills, and experience in web development and programming",
+    "The engine core of ZZORYX — the personal processing engine of Glairozz Blair Punay, an aspiring software engineer and fullstack developer.",
 };
 
 export default function HomePage() {

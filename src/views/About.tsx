@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { Code2, Lightbulb, GitBranch, Users, Rocket } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import ModuleHeader from "@/components/ModuleHeader";
+import { MODULES } from "@/data/modules";
 
 const badges = [
   {
@@ -35,22 +37,20 @@ const goals = [
 
 export default function About() {
   return (
-    <section className="px-6 py-16 md:py-28">
+    <section className="px-4 sm:px-6 py-16 md:py-24">
       <div className="max-w-6xl mx-auto">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <p className="text-cyan-400 font-medium tracking-wider text-sm mb-3">
-              ABOUT ME
-            </p>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-white">
-              Who I Am
-            </h2>
-          </div>
-        </ScrollReveal>
+        <ModuleHeader
+          module={MODULES[1]}
+          subtitle="Who I Am"
+          description="Identity profile scan of the operator — traits, focus areas, and the roadmap currently being processed."
+        />
 
         <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
           <ScrollReveal delay={0.1}>
-            <div>
+            <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-6 md:p-8">
+              <p className="font-mono text-[11px] tracking-widest text-slate-600 mb-4">
+                IDN-001 // PROFILE
+              </p>
               <h3 className="font-heading text-2xl font-semibold text-white mb-6">
                 Aspiring Software Engineer & Creative Problem Solver
               </h3>
@@ -73,38 +73,56 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {badges.map((badge) => (
-                <motion.div
-                  key={badge.title}
-                  whileHover={{ y: -4 }}
-                  className="group bg-slate-900/50 border border-slate-800 hover:border-cyan-400/30 rounded-xl p-5 transition-colors"
-                >
-                  <badge.icon className="text-cyan-400 mb-3" size={22} />
-                  <h4 className="text-white font-semibold text-sm mb-1">
-                    {badge.title}
-                  </h4>
-                  <p className="text-slate-500 text-xs leading-relaxed">
-                    {badge.description}
-                  </p>
-                </motion.div>
-              ))}
+            <div>
+              <p className="font-mono text-[11px] tracking-widest text-slate-600 mb-4 text-center md:text-left">
+                IDN-002 // TRAIT MODULES
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {badges.map((badge, i) => (
+                  <motion.div
+                    key={badge.title}
+                    whileHover={{ y: -4 }}
+                    className="group relative bg-slate-900/40 border border-slate-800 hover:border-cyan-400/30 rounded-xl p-5 transition-colors"
+                  >
+                    <span className="absolute top-3 right-3 font-mono text-[9px] tracking-widest text-slate-700 group-hover:text-cyan-500/80 transition-colors">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <badge.icon className="text-cyan-400 mb-3" size={22} />
+                    <h4 className="text-white font-semibold text-sm mb-1">
+                      {badge.title}
+                    </h4>
+                    <p className="text-slate-500 text-xs leading-relaxed">
+                      {badge.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </ScrollReveal>
         </div>
 
         <ScrollReveal>
-          <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-8 md:p-10">
-            <div className="flex items-center gap-3 mb-6">
-              <Rocket className="text-cyan-400" size={24} />
-              <h3 className="font-heading text-xl md:text-2xl font-semibold text-white">
-                What I&apos;m Working Toward
-              </h3>
+          <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-6 md:p-8">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <Rocket className="text-cyan-400" size={22} />
+                <h3 className="font-heading text-xl md:text-2xl font-semibold text-white">
+                  What I&apos;m Working Toward
+                </h3>
+              </div>
+              <span className="hidden sm:inline-flex font-mono text-[10px] tracking-widest text-slate-600 border border-slate-800 rounded px-2 py-1">
+                ROADMAP
+              </span>
             </div>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {goals.map((goal) => (
-                <div key={goal} className="flex items-start gap-3">
-                  <span className="mt-2 w-1.5 h-1.5 bg-cyan-400 rounded-full shrink-0" />
+            <div className="grid sm:grid-cols-2 gap-4">
+              {goals.map((goal, i) => (
+                <div
+                  key={goal}
+                  className="flex items-start gap-3 rounded-lg border border-slate-800/70 bg-slate-950/40 px-4 py-3"
+                >
+                  <span className="mt-0.5 font-mono text-[10px] text-cyan-500 shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <p className="text-slate-400 leading-relaxed">{goal}</p>
                 </div>
               ))}

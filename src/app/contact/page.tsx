@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Contact from "@/views/Contact";
 
 export const metadata: Metadata = {
-  title: "Contact - Glairozz Blair Punay",
+  title: "Communication — ZZORYX",
   description:
-    "Get in touch with Glairozz Blair Punay for projects, opportunities, or collaborations.",
+    "Communication module of ZZORYX — get in touch with Glairozz Blair Punay for projects, opportunities, or collaborations.",
 };
 
 export default function ContactPage() {

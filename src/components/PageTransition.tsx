@@ -1,6 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { getModuleByPath } from "@/data/modules";
 
 export default function PageTransition({
   children,
@@ -8,15 +10,44 @@ export default function PageTransition({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const [processing, setProcessing] = useState(false);
+  const firstRender = useRef(true);
+  const reduce = useReducedMotion();
+  const targetModule = getModuleByPath(pathname);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    setProcessing(true);
+    const t = setTimeout(
+      () => setProcessing(false),
+      reduce ? 120 : 650
+    );
+    return () => clearTimeout(t);
+  }, [pathname, reduce]);
 
   return (
-    <motion.div
-      key={pathname}
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
-    >
+    <>
       {children}
-    </motion.div>
+      <AnimatePresence>
+        {processing && (
+          <motion.div
+            key={pathname}
+            className="fixed inset-0 z-[250] flex items-center justify-center bg-[#020617]"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reduce ? 0.05 : 0.3 }}
+            aria-hidden
+          >
+            <div className="font-mono text-xs tracking-[0.3em] text-cyan-300 text-center">
+              PROCESSING {targetModule.code}
+              <div className="mt-3 h-px w-40 mx-auto bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

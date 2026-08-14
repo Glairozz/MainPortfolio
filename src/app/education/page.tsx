@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Education from "@/views/Education";
 
 export const metadata: Metadata = {
-  title: "Education - Glairozz Blair Punay",
+  title: "Knowledge — ZZORYX",
   description:
-    "Education background and academic journey of Glairozz Blair Punay.",
+    "Knowledge module of ZZORYX — the education background and academic journey of Glairozz Blair Punay.",
 };
 
 export default function EducationPage() {
